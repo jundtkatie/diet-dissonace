@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel='stylesheet'  href='css/nav_right.css' type='text/css'>
+
+  <link rel="stylesheet" href="https://use.typekit.net/rhk7dsb.css">
+  <link rel='stylesheet'  href='css/glitch.css' type='text/css'>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+
+  <script src="js/jquery.wanker.min.js"></script>
+  <link rel='stylesheet'  href='css/wanker.css' type='text/css'>
+
+  <style type="text/css">
+  html,body {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: #232323;
+    overflow: none;
+    text-align: center;
+  }
+
+  .slide {
+    font-family: freight-sans-condensed-pro, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    text-decoration: none;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #232323;
+    width: 70%;
+    line-height: 1.6;
+    overflow: none;
+  }
+
+  .exit {
+    text-decoration: none;
+    position: relative;
+    font-family: freight-sans-condensed-pro, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    /*    margin: auto;*/
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    letter-spacing: .085em;
+    text-decoration: none;
+    color: #232323;
+    border: 2px solid #232323;
+    overflow: none;
+    margin-top: 300px;
+    box-shadow: 3px 3px 0px #232323;
+  }
+  .exit:hover {
+    background-color: white !important;
+    color: #232323 !important;
+    transition-delay: 0s !important;
+    transition: 0.3s ease !important;
+    border: 2px solid #232323 !important;
+    font-weight: 700 !important;
+    box-shadow: 0px 0px 0px #232323 !important;
+  }
+
+</style>
+
+<script type="text/javascript">
+  
+	$(document).ready(function(){
+
+    $(".slide").css({
+     "color": "white",
+     "transition-duration": "2s",
+   });
+
+    $("a").css({
+     "color": "white",
+     "border": "2px solid white",
+     "transition-delay": "2s",
+     "transition-duration": "1s",
+     "box-shadow": "3px 3px 0px white",
+   });
+    
+  });
+
+
+
+</script>
+
+<title>CHALLENGE:end</title>
+
+</head>
+<body>
+
+
+  <div class="slide">
+    <h3>Each day, a person who eats a vegan diet saves 1,100 gallons of water, 45 pounds of grain, 30 square feet of land, 20llbs of CO2 equivalent, and one animal's life.</h3><br>
+
+
+    <a href="facts_regular.html" class="exit" id="viewfactsheet">VIEW FACT SHEET</a>
+  </div>
+
+  <!-- WANKER: Message to be revealed on resizing. -->
+  <div class="wanker" data-wanker>
+    <div class="wanker-content">
+      <h1>The web was meant to be read, not squished.</h1>
+    </div>
+  </div>
+
+  <!-- WANKER: Reveal the above content on browser resizing. -->
+  <script>
+    $(function() {
+      $('[data-wanker]').wanker({delay: 200, duration: 1000});
+    });
+  </script>

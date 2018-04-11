@@ -1,0 +1,92 @@
+.proveit {
+  text-transform: uppercase;
+  padding: .5% 5%;
+  background-color: white;
+  border: 3px solid #232323;
+  color: #232323;
+  margin-bottom: 0px;
+  animation: glitch 0.4s steps(100);
+  box-shadow: 7px 7px 0px #232323;
+}
+.proveit:hover {
+  background-color: #232323;
+  color: white;
+  transition: 0.4s ease;
+  text-decoration: none;
+  animation: glitch 0.4s steps(100);
+}
+
+#sidenav {
+  position:fixed;
+  z-index: 1;
+  left: 50px;
+  letter-spacing: .05em;
+  display: inline-block;
+  top: 75px;
+  float: left;
+  font-family: freight-sans-compressed-pro, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  opacity: 1;
+  font-size: 15px;
+}
+
+#sidenav a {
+  padding: 5px 25px;
+  margin-bottom: -2px;
+  text-decoration: none;
+  background-color: none;
+  color: white;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+#sidenav a:hover {
+  color: white;
+  border: 2px solid #232323 !important;
+  transition: color 0.3s ease;
+}
+
+span {
+  display: inline-block;
+  position: relative;
+  font-family: georgia;
+  font-weight: 400;
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  -moz-text-fill-color: white;
+  -webkit-text-fill-color: white;
+  -moz-text-stroke-color: #232323;
+  -webkit-text-stroke-color: #232323;
+  -moz-text-stroke-width: 1.5px;  
+  -webkit-text-stroke-width: 1.5px;
+}
+span:hover {
+  -moz-text-fill-color: #232323;
+  -webkit-text-fill-color: #232323;
+  -moz-text-stroke-color: #232323;
+  -webkit-text-stroke-color: #232323;
+  -moz-text-stroke-width: 2.5px;  
+  -webkit-text-stroke-width: 2.5px;
+}
+
+span sup {
+  font-size: .3em;
+  -moz-text-stroke-width: 1px;  
+  -webkit-text-stroke-width: 1px;
+  letter-spacing: .05em;
+}
+
+a {
+  text-decoration: none;
+  color: #232323;
+}
+
+.bottom {
+  padding-top: 300px;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0px;
+  margin: auto;
+}

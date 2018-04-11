@@ -1,0 +1,335 @@
+.stuffB {
+  width: 500px;
+  height: 500px;
+  display: none;
+  position: fixed;
+  left:0px;
+  top:0px;
+  z-index: 250;
+  opacity: 1;
+}
+.hoverB:hover + .stuffB {
+  display: inline-block;
+}
+
+.stuffF {
+  display: none;
+  position: fixed;
+  right:0px;
+  top:0px;
+  z-index: 250;
+  opacity: 1;
+  width: 200px;
+  height: 200px;
+}
+.hoverF:hover + .stuffF {
+  display: inline-block;
+}
+
+#meat1 {
+  position: absolute;
+  top: 100px;
+  right: 700px;
+}
+#meat2 {
+  position: absolute;
+  top: 600px;
+  right: 750px;
+}
+#meat3 {
+  position: absolute;
+  top: 900px;
+  right: 100px;
+}
+#meat4 {
+  position: absolute;
+  top: 200px;
+  right: 100px;
+}
+#meat5 {
+  position: absolute;
+  top: 800px;
+  right: 800px;
+}
+#meat6 {
+  position: absolute;
+  top: 100px;
+  right: 300px;
+}
+#meat7 {
+  position: absolute;
+  top: 300px;
+  right: 600px;
+}
+#meat8 {
+  position: absolute;
+  top: 400px;
+  right: 300px;
+}
+#meat9 {
+  position: absolute;
+  top: 750px;
+  right: 400px;
+}
+#meat10 {
+  position: absolute;
+  top: 600px;
+  right: 500px;
+}
+#meat11 {
+  position: absolute;
+  top: 700px;
+  right: 600px;
+}
+#meat12 {
+  position: absolute;
+  top: 20px;
+  right: 500px;
+}
+#meat13 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+#meat14 {
+  position: absolute;
+  top: 500px;
+  right: 100px;
+}
+
+.stuffC {
+  display: none;
+  position: fixed;
+  left:0px;
+  top:20%;
+  transform: rotate(150deg);
+  z-index: 250;
+  opacity: 1;
+  width: 700px;
+}
+.hoverC:hover + .stuffC {
+  display: inline-block;
+}
+
+.stuffD {
+  display: none;
+  position: fixed;
+  top:20%;
+  z-index: 250;
+  opacity: 1;
+  right: -50vw;
+  width: 1000px;
+  height: 1000px;
+  /*  rotate: 250deg;*/
+}
+.hoverD:hover + .stuffD {
+  display: inline-block;
+  animation: 
+  move .5s  ease-in,
+  rotate .5s ease-in;
+}
+@keyframes move {
+  from {
+    right: 50vw;
+  }
+  to {
+    right: -50vw;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(260deg);
+  }
+}
+
+.stuffE {
+  width: 250px;
+  height: 250px;
+  display: none;
+  position: fixed;
+  top:100;
+  right: 100;
+  margin: auto;
+  z-index: 350;
+  opacity: 1;
+}
+.hoverE:hover + .stuffE {
+  display: inline-block;
+  position: absolute;
+}
+
+.stuffN {
+  width: 250px;
+  height: 250px;
+  display: none;
+  position: fixed;
+  top:100;
+  right: 100;
+  margin: auto;
+  z-index: 350;
+  opacity: 1;
+}
+.hoverN:hover + .stuffN {
+  display: inline-block;
+  position: fixed;
+  transform: rotate(60deg);
+  animation: needle 0.4s ease-in;
+  animation-fill-mode: forwards;
+}
+@keyframes needle {
+  from { top: 0px; left: -50px; }
+  to   { top: 600px; left: 700px; }
+}
+
+.stuffJ {
+  width: 250px;
+  height: 250px;
+  display: none;
+  position: fixed;
+  top:100;
+  margin: auto;
+  z-index: 350;
+  left: 0;
+  max-width: 37%;
+}
+.hoverJ:hover + .stuffJ {
+  display: inline-block;
+  position: absolute;
+}
+
+#feather1 {
+  position: absolute;
+  animation: 
+  spinning_one 2s ease-out,
+  move_one 4s ease;
+  animation-fill-mode: forwards;
+}
+@keyframes move_one {
+  from { top: 0px; right: -900px; }
+  to   { top: 500px; right: 900px; }
+}
+
+@keyframes spinning_one {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+#feather2 {
+  position: absolute;
+  animation: 
+  /*spinning_two 2s ease-out,*/
+  move_two 4s ease;
+  animation-fill-mode: forwards;
+}
+@keyframes move_two {
+  from { top: 0px; right: -900px; }
+  to   { top: 600px; right: 700px; }
+}
+@keyframes spinning_two {
+  0% {
+   transform: rotate(270deg);
+ }
+ 100% {
+  transform: rotate(180deg);
+}
+}
+
+#feather3 {
+  position: absolute;
+  animation: 
+  spinning_three 2s ease-out, 
+  move_two 4s ease;;
+  animation-fill-mode: forwards;
+}
+@keyframes spinning_three {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-400deg);
+  }
+}
+@keyframes move_three {
+  from { top: 0px; right: -900px; }
+  to   { top: 300px; right: 900px; }
+}
+
+#feather4 {
+  position: absolute;
+  animation: 
+  spinning_four 2s ease-out, 
+  move_four 4s ease;;
+  animation-fill-mode: forwards;
+}
+@keyframes spinning_four {
+  0% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(480deg);
+  }
+}
+@keyframes move_four {
+  from { top: 0px; right: -900px; }
+  to   { top: 300px; right: 1000px; }
+}
+
+#feather5 {
+  position: absolute;
+  animation: 
+  spinning_five 2s ease-out, 
+  move_five 4s ease;
+  animation-fill-mode: forwards;
+}
+@keyframes spinning_five {
+  0% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(80deg);
+  }
+}
+@keyframes move_five {
+  from { top: 0px; right: -900px; }
+  to   { top: 100px; right: 900px; }
+}
+
+.callout {
+  z-index: 200;
+  opacity: 1;
+  float: left;
+  display: none;
+  position: absolute;
+  font-size: 30px;
+  left: 0;
+  max-width: 37%;
+  background-color: #232323;
+  color: white;
+  font-family: freight-sans-compressed-pro, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  -webkit-transition: background-color .35s ease-in-out;
+  transition: background-color .35s ease-in-out;
+  padding: 11px 15px;
+}
+
+.hoverspan:hover + .callout {
+  display: block;
+  transition: 500s ease-in-out;
+  transform: translateZ(42px);
+  position: absolute;
+  left: -47%;
+}
+
+.calloutsubheader {
+  font-size: 14px;
+  padding-top: 50px;
+}

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='stylesheet'  href='css/nav_right.css' type='text/css'>
+
+  <link rel='stylesheet'  href='css/glitch.css' type='text/css'>
+  <link rel='stylesheet'  href='css/mainbody.css' type='text/css'>
+  <link rel='stylesheet'  href='css/stylesheet.css' type='text/css'>
+  <link rel='stylesheet'  href='css/stylesheet_callouts.css' type='text/css'>
+
+  <script src="js/skrollr.stylesheets.js"></script>
+
+  <link rel="stylesheet" href="https://use.typekit.net/rhk7dsb.css">
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+
+  <script src="js/jquery.wanker.min.js"></script>
+  <link rel='stylesheet'  href='css/wanker.css' type='text/css'>
+
+
+  <title>VEG*N</title>
+
+  <style type="text/css">
+
+
+  .skrollable {
+    /*
+     * First-level skrollables are positioned relative to window
+     */
+     position:fixed;
+
+    /*
+     * Skrollables by default have a z-index of 100 in order to make it easy to position elements in front/back without changing each skrollable
+     */
+     z-index:100;
+   }
+
+   .skrollr-mobile .skrollable {
+    /*
+        May cause issues on Android default browser (see #331 on GitHub).
+        */
+        position:absolute;
+      }
+
+      .skrollable .skrollable {
+    /*
+     * Second-level skrollables are positioned relative their parent skrollable
+     */
+     position:absolute;
+   }
+
+   .skrollable .skrollable .skrollable {
+    /*
+     * Third-level (and below) skrollables are positioned static
+     */
+     position:static;
+   }
+
+ </style>
+
+ <script type="text/javascript">
+
+// SIDENAVIGATION
+$(document).ready(function () {
+  $("#sidenav").hide();
+
+  function showSideNavigation() {
+    var animalsY = $('#animals').offset().top-200;
+
+    if($(window).scrollTop() > animalsY) {
+      $("#sidenav").show();
+    } else {
+      $("#sidenav").hide();
+    }
+  }
+
+  var chapter = '';
+
+  $(window).scroll(function() {
+    showSideNavigation();
+
+    var scrollTop = $(window).scrollTop();
+    var hash = location.hash;
+
+    if (scrollTop >= $('#ethicalmeat').offset().top) {
+      chapter = 'ethicalmeat';
+      $('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+    } else if (scrollTop >= $('#vegetarian').offset().top) {
+      chapter = 'vegetarian';
+      $('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+    } else if (scrollTop >= $('#people').offset().top) {
+      chapter = 'people';
+      $('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+    } else if (scrollTop >= $('#environment').offset().top) {
+      chapter = 'environment';
+      $('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+    } else if (scrollTop >= $('#health').offset().top) {
+      chapter = 'health';
+      $('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+    } else if (scrollTop >= $('#animals').offset().top) {
+      chapter = 'animals';
+      $('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+    } else {
+      chapter = '';
+    }
+
+    $('#sidenav a[href="#' + chapter + '"]').css({ border: '2px solid #232323', background: '#232323', color: 'white'});
+
+    if (scrollTop >= $('#ethicalmeat').offset().top + $('#ethicalmeat').height() -200) { 
+      $("#sidenav").hide(); }
+    });
+});
+
+$(function() {
+  $('[data-wanker]').wanker({delay: 5000, duration: 5000});
+});
+
+</script>
+
+</script>
+</head>
+<body>
+
+  <div class="topnav">
+    <a href="https://katiejundt.squarespace.com/vegan/" target="_blank" id="about">ABOUT</a>
+    <a href="advice_regular.html" id="advice">ADVICE</a>
+    <a href="facts_regular.html" id="facts">FACTS</a>
+    <a href="challenge_1.html" id="challenge">CHALLENGE</a>
+    <a href="index.html" class="active" id="home">VEG*N</a>
+  </div>
+
+
+  <br><br>
+  <h1 class="introtext">WHAT DOES IT MEAN TO BE VEG*N?</h1>
+
+
+  <h1 class="veganmeaning">Veganism represents a philosophy and way of living which seeks to exclude—as far as is possible and practicable—all forms of exploitation of, and cruelty to, other animals for food, clothing or any other purpose.</h1>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+  <h1 class="introtext" id="whyvegan">WHY WOULD SOMEONE CHOOSE TO BE VEG*N?</h1>
+
+  <div id="sidenav">
+    <a href="#animals" class="subsection">FOR THE ANIMALS</a>
+    <a href="#health" class="subsection">FOR YOUR HEALTH</a>
+    <a href="#environment" class="subsection">FOR THE ENVIRONMENT</a>
+    <a href="#people" class="subsection">FOR PEOPLE</a>
+    <a href="#vegetarian" class="subsection">WHY VEGETARIAN ISN'T ENOUGH</a>
+    <a href="#ethicalmeat" class="subsection">ETHICAL MEAT</a>
+
+  </div>
+
+  <div id="masspigs" data-0-bottom-center="opacity:.2;" data-center-center="opacity: .8;" data-200-top-bottom="opacity: 0;"><img src="Animal Images/masspigs.jpg" style="max-width: 600px"></div>
+
+  <div id="masscows" data-0-bottom-center="opacity:0;" data-0-center-center="opacity: .8;" data-top-top="opacity: 0;"><img src="Animal Images/masscows.jpg" style="max-width: 650px"></div>
+
+  <div id="chickenimage" data-0-bottom-center="opacity:0;" data-0-center-center="opacity: .8;" data-top-top="opacity: 0;"><img src="Animal Images/chickenimage.jpg" style="max-width: 600px"></div>
+
+
+  <div id="deadpig" data-0-bottom-center="opacity:0;" data-0-center-center="opacity: .8;" data-top-top="opacity: 0;"><img src="Animal Images/deadpig.jpg" style="max-width: 500px"></div>
+
+  <div id="raperack" data-0-bottom-center="opacity:0;" data-0-center-center="opacity: .8;" data-top-top="opacity: 0;"><img src="Animal Images/raperack.jpg" style="max-width: 375px"></div>
+
+<!-- <div id="babycow" data-3700="opacity:0;" data-4000="opacity: .8;" data-4400="opacity: 0;"><img src="Animal Images/babycow.jpg" style="max-width: 900px"></div>
+-->
+
+
+<div id="chicks" data-0-bottom-center="opacity:0;" data-0-center-center="opacity: .8;" data-top-top="opacity: 0;"><img src="Animal Images/chicks.jpg" style="max-height: 400px"></div>
+
+<h2 id="animals">Preventing the exploitation<span class="hoverspan"><sup>1</sup></span>
+
+  <div class="callout" id="stuff1">For every 1 pound of fish caught, up to 5 pounds of unintended marine species are caught and discarded as "by-kill"<br><div class="calloutsubheader">This can be as many as 40% (63 billion pounds) of fish caught globally every year are discarded.</div></div>
+
+  of animals is, for many, the primary factor in their decision to be vegan. Others believe that all <span id="shutdown" class="hoverB">sentient creatures</span> 
+
+  <div class="stuffB">
+    <img id="cow1" src="VectorImages/Cow1.svg" alt="Cow standing line art">
+    <img id="cow2" src="VectorImages/Cow4.svg" alt="Cow standing line art">
+    <img id="cow3" src="VectorImages/Cow3.svg" alt="Cow standing line art">
+    <img id="cow4" src="VectorImages/Cow2.svg" alt="Cow standing line art">
+
+  </div>
+  have a right to life and freedom. <br><br>The best way<span class="hoverspan"><sup>2</sup></span> 
+
+  <div class="callout" id="stuff2">AG-GAG Laws criminalize whistleblowers who photo-document abuses by the animal agriculture industry.</div>
+
+  to help animals suffering<span class="hoverspan"><sup>3</sup></span>
+
+  <div class="callout" id="stuff3">More than 6 million animals are killed for food every hour.</div> 
+
+  in industries that <span class="hoverN">exploit</span>  
+
+  <div class="stuffN">
+      <img id="needle" src="VectorImages/needle.svg">
+  </div>
+
+  and treat them cruelly<span class="hoverspan"><sup>4</sup></span> 
+
+  <div class="callout" id="stuff4">80% of antibiotics sold in the US are for livestock.</div>
+
+  is to stop eating them! No animal, regardless of breeding, wants to die for someone’s dinner.<span class="hoverspan"><sup>5</sup></span></di>
+
+  <div class="callout" id="stuff5">Dead hogs are processed into feed and fed back to the hogs in our current food production industry.</div>
+
+  <h2 id="health">The vegan lifestyle provides many scientifically proven health benefits<span class="hoverspan"><sup>6</sup></span> 
+
+    <div class="callout" id="stuff6">Within minutes of eating dead meat bacteria toxins the body gets a burst of inflammation, stiffening or paralyzing of the arteries.</div>
+
+    when compared to the average<span class="hoverspan"><sup>7</sup></span> 
+
+    <div class="callout" id="stuff7">The average American consumes 209 pounds of meat per year.</div>
+
+    <span class="hoverF">western diet</span>
+
+    <div class="stuffF">
+      <img id="meat1" src="VectorImages/meat1.svg">
+      <img id="meat2" src="VectorImages/meat2.svg">
+      <img id="meat3" src="VectorImages/meat3.svg">
+      <img id="meat4" src="VectorImages/meat4.svg">
+      <img id="meat5" src="VectorImages/meat5.svg">
+      <img id="meat6" src="VectorImages/meat6.svg">
+      <img id="meat7" src="VectorImages/meat7.svg">
+      <img id="meat8" src="VectorImages/meat8.svg">
+      <img id="meat9" src="VectorImages/meat9.svg">
+      <img id="meat10" src="VectorImages/meat10.svg">
+      <img id="meat11" src="VectorImages/meat11.svg">
+      <img id="meat12" src="VectorImages/meat12.svg">
+      <img id="meat13" src="VectorImages/meat13.svg">
+      <img id="meat14" src="VectorImages/meat14.svg">
+
+    </div>
+    .<span class="hoverspan"><sup>8</sup></span> 
+    <div class="callout" id="stuff8">Most Americans consume 2x their daily protien requirements, while getting less than half of the fiber they need.</div>
+
+    Well-planned plant-based diets are rich in protein,<span class="hoverspan"><sup>9</sup></span>
+
+    <div class="callout" id="stuff9">All protein is initially made by plants.</div>
+
+    iron, calcium and other essential vitamins and minerals.<span class="hoverspan"><sup>10</sup></span>
+
+    <div class="callout" id="stuff10">Vitamin intake and overall nutrition go up on a plant-based diet from a meat-based diet.</div>
+
+    A plant-based diet tends to be low in saturated fat, high in fiber and packed with antioxidants, helping mitigate some of the modern world's biggest health issues like obesity, heart disease,<span class="hoverspan"><sup>11</sup></span>
+
+    <div class="callout" id="stuff11">You can stop and reverse heart disease with plant-based diets.</div>
+
+    diabetes<span class="hoverspan"><sup>12</sup></span> 
+
+    <div class="callout" id="stuff12">One serving of processed meat per day has been found to increase your risk of developing diabetes by 51%.</div>
+    
+    and cancer.<span class="hoverspan"><sup>13</sup></span>
+
+    <div class="callout" id="stuff13">If you chose to eat meat, your chances of <br><div class="calloutsubheader">Getting diabetes are about 1 in 3<br>Getting cancer: for women 1 in 3, for men 1 in 2<br>Gaining weight are about 2 in 3 </div></div>
+
+  </h2>
+
+
+  <h2 id="environment">The most effective thing you can do to lower your carbon footprint is to avoid all animal products.<span class="hoverspan"><sup>14</sup></span> 
+
+    <div class="callout" id="stuff14">Livestock and their byproducts account for at least 32,000 million tons of carbon dioxide (CO2) per year, and 51% of all worldwide greenhouse gas emissions.<br><div class="calloutsubheader">Livestock is responsible for 65% of all human-related emissions of nitrous oxide - a greenhouse gas with 296 times the global warming potential of carbon dioxide, and which stays in the atmosphere for 150 years.</div></div>
+
+    The production of meat and other animal products places a heavy burden on the environment<span class="hoverspan"><sup>15</sup></span>
+
+    <div class="callout" id="stuff15">Raising animals for food produces more greenhouse gases than the entire transportation sector.</div>
+
+    - from crops and water<span class="hoverspan"><sup>16</sup></span>
+
+    <div class="callout" id="stuff16">Growing feed crops for livestock consumes 56% of water in the US.</div>
+
+    required to feed the animals, to the transport and other processes involved from farm to fork.<span class="hoverspan"><sup>17</sup></span>
+
+    <div class="callout" id="stuff17"> 55% of water consumed in the US is for animal agriculture.<div class="calloutsubheader">5% of water consumed in the US is by private homes.</div></div>
+
+    Meat production is a significant contributor to deforestation,<span class="hoverspan"><sup>18</sup></span> 
+
+    <div class="callout" id="stuff18">Animal agriculture is responsible for up to 91% of Amazon destruction.  <br> <br> 1-2 acres of rainforest is cleared every second.</div>
+
+    habitat loss and species <span class="hoverC">extinction</span>.
+
+    <div class="stuffC">
+      <img src="VectorImages/extinction.svg">
+    </div>
+
+    <span class="hoverspan"><sup>19</sup></span> 
+
+    <div class="callout" id="stuff19">Up to 137 plant, animal and insect species are lost every day due to rainforest destruction.</div>
+
+    Land used<span class="hoverspan"><sup>20</sup></span> 
+
+    <div id="factory3" data-0-bottom-center="opacity:0;" data-0-center-center="opacity: .8;" data-top-top="opacity: 0;"><img src="Animal Images/factory3.jpg" style="max-width: 370px"></div>
+
+    <div id="debeaked" data-0-bottom-center="opacity:0;" data-0-center-center="opacity: .8;" data-top-top="opacity: 0;"><img src="Animal Images/debeaked.jpg" style="max-width: 370px"></div>
+
+    <div class="callout" id="stuff20">Livestock or livestock feed occupies 1/3 of the earth’s ice-free land,  covering 45% of the earth’s total land.</div>
+
+    for animal agriculture contributes to developing world malnutrition<span class="hoverspan"><sup>21</sup></span> 
+
+    <div class="callout" id="stuff21">We are currently growing enough food to feed 10 billion people. <div class="calloutsubheader">Yet much of that food is grown to feed the 70 billion farmed animals are reared annually worldwide. </div></div>
+
+    by incentivising profit over the lives of people and animals in impoverished populations, resulting in starvation and human rights violations.<span class="hoverspan"><sup>22</sup></span>
+
+    <div class="callout" id="stuff22">82% of starving children live in countries where food is fed to animals, and the animals are eaten by western countries.</div>
+
+    <br><br>
+    Conversely, lower quantities of crops and water are required to sustain a vegan diet, making veganism the most effective way to reduce your impact on the environment. <span class="hoverspan"><sup>23</sup></span> 
+
+    <div class="callout" id="stuff23">15x more protein can be grown on any given area of land with plants, rather than with cows.<br><div class="calloutsubheader">Soybeans can be produced at 52. 5 bushels per acre x 60 lbs. per bushel = 3,150 dry soybeans per acre<br>Soybeans protein content (dry) is 163.44 grams per pound<br>The protein content per acre of soybeans is 163.44 g x 3,150 lb. = 514,836 g per acre<br><br>Beef can be produced at 205 pounds per acre<br>Beef protein content (raw) is 95.34 grams per pound<br>The protein content per acre of beef is 95.34 g x 205 lb. = 19,544.7 g per acre</div></div>
+    <span class="hoverspan"><sup>24</sup></span>
+    <div class="callout" id="stuff24">A person who follows a vegan diet produces the equivalent of 50% less carbon dioxide, uses 1/11th oil, 1/13th water, and 1/18th land compared to a meat-lover for their food.</div>
+  </h2>
+
+  <h2 id="people">Plant-based living is also a more sustainable way of feeding the human family. A plant-based diet requires only one third of the land needed to support a meat and dairy diet.<span class="hoverspan"><sup>25</sup></span> 
+
+    <div class="callout" id="stuff25">Land required to feed 1 person for 1 year:<br><div class="calloutsubheader">Vegan: 1/6th acre<br>Vegetarian: 3x as much as a vegan<br>Meat Eater: 18x as much as a vegan</div></div>
+
+    Avoiding animal products is not just one of the simplest ways an individual can reduce the strain on food as well as other resources, it's the simplest way to take a stand against inefficient food systems<span class="hoverspan"><sup>26</sup></span> 
+
+    <div class="callout" id="stuff26">Testing shows 88% of pork chops, 90% of ground beef, and 95% of chicken breasts sampled were contaminated with fecal bacteria.</div>
+
+    which disproportionately affects the poorest people all over the world.<span class="hoverspan"><sup>27</sup></span>
+
+    <div class="callout" id="stuff27">Each day, a person who eats a vegan diet saves 1,100 gallons of water, 45 pounds of grain, 30 sq ft of forested land, 20 lbs CO2 equivalent, and one animal’s life.</div>
+  </h2>
+
+  <h2 id="vegetarian">The suffering caused by the dairy<span class="hoverspan"><sup>28</sup></span> 
+
+    <div class="callout" id="stuff28">The dairy industry is the veal industry.<div class="calloutsubheader"> Cows, like humans, have strong maternal instincts. When a calf is born, they are removed from their mother to make the mother’s milk available for human collection and consumption. These young calves are raised for veal or put in the milk production system, based on their sex. Both outcomes involve lives of exploitation, loneliness, and a premature death.</div></div>
+
+    and egg<span class="hoverspan"><sup>29</sup></span> 
+
+    <div class="callout" id="stuff29">The average hen is given less than an 8 ½ x 11-inch encaged area to live in her entire life. <div class="calloutsubheader">Egg production farms, or industrial hen houses, subjects females to live their entire lives in small, wire ‘battery’ cages that often hold 5-10 chickens. </div></div>
+
+    industries is possibly less well publicized than the plight of factory farmed animals.<span class="hoverspan"><sup>30</sup></span>
+
+    <div class="callout" id="stuff30">Pigs in factory farms are wrapped in darkness. <div class="calloutsubheader">Pigs are fully aware of their own existence and are even more intelligent than dogs. On factory farms, pigs do not experience fresh air until the last day of their lives, when they are transported to slaughter.</div></div>
+
+    <span class="hoverspan"><sup>31</sup></span>
+
+    <div class="callout" id="stuff31">Chickens raised for meat are called broilers, and live in a crowded shed where the ammonia from their own waste irritated and burns their eyes, throats, and skin. <div class="calloutsubheader">It is not uncommon for chickens to be beaten, stabbed, and impaled by workers while being gathered for slaughter. These workers spray the chickens with smoke to subdue them.</div></div>
+
+    <span class="hoverspan"><sup>32</sup></span>
+
+    <div class="callout" id="stuff32">It is common for young calves to develop acute throat irritation resulting from repeated crying for their mothers.<div class="calloutsubheader">Beef Cattle Factory Farms feed cattle a grain diet that is unnatural and hard on their digestive system, causing chronic illness and bacteria complications. </div></div>
+
+    <br><br><br>The production of <span class="hoverD">dairy</span> 
+
+    <div class="stuffD">
+     <img src="VectorImages/cleaver.svg">
+   </div>
+
+   products necessitates the death of male calves to the veal industry, while female cows are slaughtered when their milk production decreases. <br><br>
+
+   In the egg industry, even ‘ethical’ or ‘free range’<span class="hoverspan"><sup>33</sup></span> 
+
+   <div class="callout" id="stuff33">Even ‘free-range’ chickens are often kept inside massive crowded sheds without ever going outside.</div>
+
+   eggs involve the killing of the ‘unnecessary’ male chicks<span class="hoverJ">.</span>
+
+   <div class="stuffJ">
+    <img src="Animal Images/jordan.jpg" id="jordan">
+  </div>
+
+  Hens are debeaked and declawed at a young age to prevent them from harming themselves and others out of the stress they will experience in their lives.<span class="hoverspan"><sup>34</sup></span>
+
+  <div class="callout" id="stuff34">The cages cause bruises and abrasions, which are quickly complicated as fecal matter falls from cages above. <div class="calloutsubheader">The cages are stacked on top of one another, and the waste of the chickens continuously falls on the chickens below. </div></div>
+</div>
+
+<h2 id="ethicalmeat">It’s tempting to want to believe that the meat we eat is ethical, that our ‘food animals’ have lived full, <span class="hoverE">happy lives</span> 
+
+  <div class="stuffE">
+    <img src="VectorImages/feather1.svg" id="feather1">
+    <img src="VectorImages/feather2.svg" id="feather2">
+    <img src="VectorImages/feather3.svg" id="feather3">
+    <img src="VectorImages/feather4.svg" id="feather4">
+    <img src="VectorImages/feather5.svg" id="feather5">
+  </div>
+
+  and that they have experienced no pain or fear at the slaughterhouse. Yet the truth is that all living creatures (even those labelled ‘free range’ or ‘organic’)<span class="hoverspan"><sup>35</sup></span> 
+
+  <div class="callout" id="stuff35">Eating organic meat will NOT help you avoid contaminants in the meat.</div>
+
+fear death, just as we do. No matter how they are treated when alive, they all experience the same fear when it comes to slaughter.</h2>
+</h2>
+
+<div class="bottom">
+
+  <div id="babypigs" data-0-bottom-center="opacity:0;" data-0-center-center="opacity: .8;" data-top-top="opacity: 0;"><img src="Animal Images/babypigs.jpg" style="max-height: 400px"></div>
+
+  <h1 class="introtext">IT TAKES THREE WEEKS TO BUILD A HABIT.</h1><br><br><br>
+
+  <div id="runchicks" data-0-bottom-center="opacity:0;" data-0-center-center="opacity: .8;" data-top-top="opacity: 0;"><img src="Animal Images/runchicks.jpg" style="max-height: 200px"></div>
+
+  <div id="nofeathers" data-0-bottom-center="opacity:0;" data-0-center-center="opacity: .8;" data-top-top="opacity: 0;"><img src="Animal Images/nofeathers.jpg" style="max-height: 400px"></div>
+
+  <h1 class="introtext">COULD YOU CHANGE YOUR DIET?</h1></div><br><br><br>
+
+  <div id="poorchickens" data-0-bottom-center="opacity:0;" data-0-center-center="opacity: .8;" data-top-top="opacity: 0;"><img src="Animal Images/poorchickens.jpg" style="max-height: 200px;"></div>
+
+  <h1 style="padding-bottom: 0px !important;"><a class="proveit" href="javascript:delay('challenge_1.html')">Prove it.</a></h1>
+
+<script type="text/javascript" src="js/skrollr.min.js"></script>
+<script type="text/javascript">
+function delay (URL) {
+    setTimeout( function() { window.location = URL }, 800 );
+}
+
+$(document).ready(function() {
+  $( ".proveit" ).click(function() {
+
+    $('body').css({
+          "background-color": "#232323",
+          "transition": "background-color .3s ease-in-out",
+          // "color": "#232323",
+          // "transition": "color .5s",
+      })
+      $('img').css({
+          "opacity": "0",
+          "transition": "opacity .3s",
+      })
+      $('.proveit').css({
+          "background-color": "white",
+          "transition": "background-color .2s",
+          "border": "5px solid #232323",
+          "transition": "border .2s",
+          "color": "#232323",
+          "transition": "color .2s",
+      })
+
+  });
+  });
+
+
+
+  var s = skrollr.init();
+</script>
+
+
+<!-- WANKER: Message to be revealed on resizing. -->
+<div class="wanker" data-wanker>
+  <div class="wanker-content">
+    <h1>The web was meant to be read, not squished.</h1>
+  </div>
+</div>
+
+<!-- WANKER: Reveal the above content on browser resizing. -->
+<script>
+  $(function() {
+    $('[data-wanker]').wanker({delay: 200, duration: 1000});
+  });
+</script>
+</body>
+</html>

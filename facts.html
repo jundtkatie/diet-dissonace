@@ -1,0 +1,1139 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel='stylesheet'  href='css/nav_right.css' type='text/css'>
+
+<link rel='stylesheet' type='text/css' href="css/facts_advice.css">
+<link rel='stylesheet'  href='css/glitch.css' type='text/css'>
+
+<link rel="stylesheet" href="https://use.typekit.net/rhk7dsb.css">
+
+<script src="js/jquery-3.3.1.min.js"></script>
+
+<script src="js/jquery.wanker.min.js"></script>
+<link rel='stylesheet'  href='css/wanker.css' type='text/css'>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+<title>CHALLENGE:FACTS</title>
+
+  <style type="text/css">
+
+
+  .skrollable {
+    /*
+     * First-level skrollables are positioned relative to window
+     */
+     position:fixed;
+
+    /*
+     * Skrollables by default have a z-index of 100 in order to make it easy to position elements in front/back without changing each skrollable
+     */
+     z-index:100;
+   }
+
+   .skrollr-mobile .skrollable {
+    /*
+        May cause issues on Android default browser (see #331 on GitHub).
+        */
+        position:absolute;
+      }
+
+      .skrollable .skrollable {
+    /*
+     * Second-level skrollables are positioned relative their parent skrollable
+     */
+     position:absolute;
+   }
+
+   .skrollable .skrollable .skrollable {
+    /*
+     * Third-level (and below) skrollables are positioned static
+     */
+     position:static;
+   }
+
+ </style>
+
+<script type="text/javascript">
+
+// SIDE NAVIGATIONS
+
+$(document).ready(function(){
+	$("#choicefact").click(function(){
+		$("#selectedfacts").show();
+		$("#selectedadvice").hide();
+		$(".landing").hide();
+		$("#sidenav").show();
+	});
+});
+
+function showSideNavigation() {
+	var animalsY = $('#animals')
+
+	if($(window).scrollTop() > animalsY) {
+		$("#sidenav").show();
+	} else {
+		$("#sidenav").show();
+	}
+}
+
+var chapter = '';
+
+$(window).scroll(function() {
+	showSideNavigation();
+
+	var scrollTop = $(window).scrollTop()+ $(window).height();
+	var hash = location.hash;
+
+	if (scrollTop >= $('#vegansolution').offset().top) {
+		chapter = 'vegansolution';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else if (scrollTop >= $('#health_diseaseprevention').offset().top) {
+		chapter = 'health_diseaseprevention';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else if (scrollTop >= $('#health_protein').offset().top) {
+		chapter = 'health_protein';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else if (scrollTop >= $('#health_dairy').offset().top) {
+		chapter = 'health_dairy';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else if (scrollTop >= $('#health_chicken').offset().top) {
+		chapter = 'health_chicken';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else if (scrollTop >= $('#health_fish').offset().top) {
+		chapter = 'health_fish';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else if (scrollTop >= $('#health_meat').offset().top) {
+		chapter = 'health_meat';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else if (scrollTop >= $('#health_eggs').offset().top) {
+		chapter = 'health_eggs';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else if (scrollTop >= $('#humanhealth').offset().top) {
+		chapter = 'humanhealth';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else if (scrollTop >= $('#humanrights').offset().top) {
+		chapter = 'humanrights';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else if (scrollTop >= $('#environment').offset().top) {
+		chapter = 'environment';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else if (scrollTop >= $('#animals').offset().top) {
+		chapter = 'animals';
+		$('#sidenav a').css({ border: 'none', background: 'none', color: '#232323'});
+	} else {
+		chapter = '';
+	}
+
+	$('#sidenav a[href="#' + chapter + '"]').css({ border: '2px solid #232323', background: '#232323', color: 'white'});
+});
+
+$(function() {
+  $('[data-wanker]').wanker({delay: 1000, duration: 5000});
+});
+</script>
+
+</head>
+
+<body> 
+	<div class="topnav">
+		<a href="https://katiejundt.squarespace.com/vegan/" target="_blank" id="about">ABOUT</a>
+		<a href="advice_regular.html" id="advice">ADVICE</a>
+		<a href="facts_regular.html" class="active" id="facts">FACTS</a>
+		<a href="challenge_1.html" id="challenge">CHALLENGE</a>
+		<a href="index.html" id="home">VEG*N</a>
+	</div>
+
+	<div class="returnbutton">
+		<a href="javascript:history.back()">Return to Challenge</a>
+	</div>
+
+	<div id="sidenav">
+		<a href="#animals" class="entries">ANIMALS</a>
+		<a href="#environment" class="entries">THE ENVIRONMENT</a>
+		<a href="#humanrights" class="entries">HUMAN RIGHTS</a>
+		<a href="#humanhealth" class="entries">HUMAN HEALTH</a>
+		<a href="#health_eggs" class="subsection" class="entries">EGGS</a>
+		<a href="#health_meat" class="subsection" class="entries">PROCESSED MEAT</a>
+		<a href="#health_fish" class="subsection" class="entries">FISH</a>
+		<a href="#health_chicken" class="subsection" class="entries">CHICKEN</a>
+		<a href="#health_dairy" class="subsection" class="entries">DAIRY</a>
+		<a href="#health_protein" class="entries">PROTEIN</a>
+		<a href="#health_diseaseprevention" class="entries">DISEASE PREVENTION</a>
+		<a href="#vegansolution" class="entries">THE VEGAN SOLUTION</a>
+	</div>
+
+	<div class="fact_section">   
+		<div id="animals">  
+			<div class="entry">
+				<p class="fact">¾ of the world’s fisheries are exploited or depleted.</p> 
+				<p class="factsource"><a href="http://www.un.org/events/tenstories/06/story.asp?storyid=800" target="_blank">"Overfishing: a threat to marine biodiversity". United Nations Environment Programme</a></p>
+				<p class="factsource"><a href="http://www.fao.org/newsroom/common/ecg/1000505/en/stocks.pdf" target="_blank">"General situation of world fish stocks". United Nations Food and Agriculture Organization</a></p>
+			</div>
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-45deg);" data-top-top="left:0px;transform:rotate(-90deg);" src="VectorImages/meat1.svg" style="
+	z-index: -500;
+	display: block;
+	position: absolute;
+	animation-fill-mode: forwards;
+	max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">We could see fishless oceans by 2048.</p>
+				<p class="factsource"><a href="https://news.nationalgeographic.com/news/2006/11/061102-seafood-threat.html" target="_blank">Worm, Boris, et al. "Impacts of Biodiversity Loss on Ocean Ecosystem Services". Science. Vol 314. 3 November 2006</a></p>
+				<p class="factsource"><a href="https://www.ioos.noaa.gov/wp-content/uploads/2015/10/worm-et-al.pdf" target="_blank">Roach, John. "Seafood May Be Gone by 2048, Study Says". National Geographic News.  November 2, 2006</a></p>
+				<p class="factsource"><a href="https://www.nationalgeographic.com/environment/oceans/" target="_blank">Montaigne, Fen. "Still Waters: The Global Fish Crisis". National Geographic</a></p>
+			</div>  
+			<div id="3result1note6" class="entry">
+				<p class="fact">For every 1 pound of fish caught, up to 5 pounds of unintended marine species are caught and discarded as by-kill, and as many as 40% (63 billion pounds) of fish caught globally every year are discarded.</p>
+				<p class="factsource"><a href="http://www.fao.org/docrep/W6602E/w6602E09.htm" target="blank">"Discard and bycatch in Shrimp trawl fisheries". FAO: Fisheries and Aquaculture Department</a></p>
+				<p class="factsource"><a href="http://oceana.org/sites/default/files/reports/Bycatch_Report_FINAL.pdf" target="blank">Keledjian, Amanda, et al. "Wasted Catch: Unsolved Problems in U.S. Fisheries". Oceana. March 2014</a></p>
+				<p class="factsource"><a href="https://www.theguardian.com/environment/2014/mar/20/americas-nine-most-wasteful-fisheries-named" target="blank">Goldenberg, Suzanne. "America's nine most wasteful fisheries named". The Guardian. 20 March 2014</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat2.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="1result1note1" class="entry">
+				<p class="fact">70 billion farmed animals are reared annually worldwide. More than 6 million animals are killed for food every hour.</p>
+				<p class="factsource"><a href="https://awfw.org/factory-farms/" target="blank">"Factory Farms". A Well Fed World</a></p>
+				<p class="factsource"><a href="https://www.ciwf.org.uk/media/3640540/ciwf_strategic_plan_20132017.pdf" target="blank">"Strategic Plan 2013-2017: For Kinder, Fairer Farming Worldwide". Compassion in World Farming</a></p>
+				<p class="factsource"><a href="http://www.adaptt.org/" target="blank">"Animals Slaughtered". Animals Deserve Absolute Protection Today and Tomorrow</a></p>
+				<p class="factsource">Oppenlander, Richard A. Less Meat, and Taking Baby Steps Won’t Work. Minneapolis, MN : Langdon Street, 2013. Print.</p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat5.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">80% of antibiotics sold in the US are for livestock.</p>
+				<p class="factsource"><a href="http://livablefutureblog.com/2010/12/new-fda-numbers-reveal-food-animals-consume-lion%E2%80%99s-share-of-antibiotics" target="blank">Loglisci, Ralph. "New FDA Number's Reveal Food Animals Consume Lion's Share of Antibiotics". Center for a livable future. December 2010</a></p>
+				<p class="factsource"><a href="https://www.fda.gov/downloads/ForIndustry/UserFees/AnimalDrugUserFeeActADUFA/UCM231851.pdf" target="blank">"2009 Summary Report on Antimicrobials Sold or Distributed for Use in Food-Producing Animals". FDA: Departent of Health and Human Services. September, 2014</a></p>
+				<p class="factsource"><a href="http://www.foodsafetynews.com/2015/12/2015-in-review-animal-antibiotics/#.WnIk_VPwYk9" target="blank">Zuraw, Lydia. "2015 in Review: Animal Antibiotics". Food Safety News. December 2015</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3234384/" target="blank">Flanders, Timothy F, RN, CNP, PHD, et al. "A Review of Antibiotic Use in Food Animals: Perspective, Policy, and Potential". Public Health Reports 2012 Jan-Feb; 127 (1): 4-22</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(90deg);" data-top-top="left:0px;transform:rotate(180deg);" src="VectorImages/meat6.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">There are at least 450 drugs that are administered to animals.</p>
+				<p class="factsource"><a href="http://www.centerforfoodsafety.org/files/animal_drug_es_10_26_77814.pdf" target="blank">"America's Secret Animal Drug Problem". Center for Food Safety. Executive Summary September 2015</a></p>
+				<p class="factsource"><a href="https://www.drugs.com/vet/dairy-cattle-a.html" target="blank">"Treatments for Dairy Cattle A-Z". Drugs.com: Know more. Be sure.</a></p>
+			</div>  
+			<div id="2result1note3" class="entry">
+				<div id="4result2note10"></div>
+				<p class="fact">Dead hogs are processed into feed and fed back to the hogs in our current methods of food production.</p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1867957/" target="blank">Sapkota, Amy R., et al "What Do We Feed to Food-Production Animals? A Review of Animal Feed Ingredients and Their Potential Impacts on Human Health". National Institue of Environmental Health Science. 2007 May; 115(5): 663-670</a></p>
+				<p class="factsource"><a href="http://porkgateway.org/resource/by-product-feed-ingredients-for-use-in-swine-diets/" target="blank">"By-product feed Ingredients for Use in Swine Diets". Pork Information Gateway</a></p>
+				<p class="factsource"><a href="https://www.aphis.usda.gov/animal_health/emergingissues/downloads/render.pdf" target="blank">"United States Rendering and Feed-Manufacturing Industries: Evaluation of Practices with Risk Potential of Bovine Spongiform Encephalopathy". USDA: APHIS: VS: Centers for Epdemiology and Animal Health. February 1993</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat7.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="2result1note4" class="entry">
+				<p class="fact">AG-GAG Laws criminalize whistleblowers who photo-document abuses by the animal agriculture industry.</p>
+				<p class="factsource"><a href="https://www.govtrack.us/congress/bills/109/s3880/text" target="blank">"Animal Enterprise Terrorism Act". govtrack: S. 3880 (109th) </a></p>
+				<p class="factsource"><a href="https://www.govtrack.us/congress/bills/109/hr554/text" target="blank">"Personal Responsibility in Food Consumption Act of 2005 (Cheeseburger Bill)". govtrack: H.R. 554 (109th)</a></p>
+				<p class="factsource"><a href="http://www.phaionline.org/wp-content/uploads/2013/08/WilkingDaynardFDLJAug13.pdf" target="blank">Wilking, Cara L &amp; Daynard, Richard A "Beyond Cheeseburgers: The Impact of Commonsense Consumption Acts on Future Obesity-Related Lawsuits". Food and Drug Law Journal. Volume 68 Number 3 2013</a></p>
+			</div>  
+		</div>
+		<div id="environment">
+			<div id="7result2note20" class="entry">
+				<p class="fact">Raising animals for food produces more greenhouse gases than the entire transportation sector.</p>
+				<p class="factsource"><a href="http://www.fao.org/Newsroom/en/news/2006/1000448/index.html" target="blank">"Livestock a major threat to environment". Food and Agriculture Organization of the United Nations:Newsroom</a></p>
+				<p class="factsource"><a href="http://www.fao.org/docrep/010/a0701e/a0701e00.HTM" target="blank">"Livestock's Long Shadow". Food and Agriculture Organization</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-180deg);" data-top-top="left:-700px;transform:rotate(-360deg);" src="VectorImages/meat3.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Animal Agriculture is responsible for 18% of greenhouse gas emissions, more than the combined exhaust from all transportation (which is only 13%).</p>
+				<p class="factsource"><a href="http://www.fao.org/docrep/010/a0701e/a0701e00.HTM" target="blank">"Livestock's Long Shadow: environmental issues and options". Food and Agriculture Organization of the United Nations. Rome 2006</a></p>
+			</div>  
+			<div id="17result2note29" class="entry">
+				<p class="fact">Livestock and their byproducts account for at least 32,000 million tons of carbon dioxide (CO2) per year, of 51% of all worldwide greenhouse gas emissions.</p>
+				<p class="factsource">Goodland, R Anhang, J. “Livestock and Climate Change: What if the key actors in climate change were pigs, chickens and cows?”</p>
+				<p class="factsource"><a href="http://www.worldwatch.org/files/pdf/Livestock%20and%20Climate%20Change.pdf" target="blank">Goodland, Robert &amp; Anhang, Jeff. "Livestock and Climate Change: What if the key actors in climate change are...cows, pigs and chickens?". WorldWatch. November/December 2009</a></p>
+				<p class="factsource"><a href="http://www.independent.co.uk/environment/climate-change/study-claims-meat-creates-half-of-all-greenhouse-gases-1812909.html" target="blank">Hickman, Martin. "Study claims meat creates half of all greenhouse gases". Independent. November 2009</a></p>
+				<p class="factsource"><a href="https://gelr.org/2015/10/23/a-leading-cause-of-everything-one-industry-that-is-destroying-our-planet-and-our-ability-to-thrive-on-it-georgetown-environmental-law-review/" target="blank">Hyner, Christopher. "A Leading Cause of Everything: One Industry That Is Destroying Our Planet and Our Ability to Thrive on It". Georgetown Environmental Law Review. October 23, 2015.</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat9.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Livestock is responsible for 65% of all human-related emissions of nitrous oxide - a greenhouse gas with 296 times the global warming potential of carbon dioxide, and which stays in the atmosphere for 150 years.</p>
+				<p class="factsource"><a href="http://www.fao.org/docrep/010/a0701e/a0701e00.html" target="blank">"Livestock' Long Shadow: environmental issues and options". FAO. Rome. 2006</a></p>
+				<p class="factsource"><a href="https://www.eia.gov/environment/emissions/ghg_report/ghg_nitrous.php" target="blank">"Emissions of Greenhouse Gases in the United States". U.S. Energy Information Administration. March 31, 2011</a></p>
+			</div>  
+			<div class="entry">
+				<p class="fact">Reducing methane emissions would create tangible benefits almost immediately.</p>
+				<p class="factsource"><a href="http://www.un.org/climatechange/summit/wp-content/uploads/sites/2/2014/05/INDUSTRY-PR.pdf" target="blank">"Industry Leaders, including Energy Companies, Forge Partnerships to Advance Climate Solutions and Reduce Short-Lived Climate Pollutants". Climate Summit 2014.</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-180deg);" data-top-top="left:-700px;transform:rotate(-360deg);" src="VectorImages/meat8.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Agriculture is responsible for 80-90% of US water consumption.</p>
+				<p class="factsource"><a href="https://www.ers.usda.gov/topics/farm-practices-management/irrigation-water-use/background.aspx" target="blank">"How Important is Irrigation to U.S. Agriculture?" USDA: Economic Research Service. 12 October, 2016</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat4.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Growing feed crops for livestock consumes 56% of water in the US.</p>
+				<p class="factsource">Jacobson, Michael F. “Six Arguments For a Greener Diet: How a More Plant-based Diet Could Save Your Health and the Environment. Chapter 4: More and Cleaner Water”. Washington, DC: Center for Science in the Public Interest, 2006.</p>
+			</div>
+			<div class="entry">
+				<p class="fact">2,500 gallons of water are needed to produce 1 pound of beef.</p>
+				<p class="factsource"><a href="http://www.earthsave.org/environment/water.htm" target="blank">Robbins, John. "2,500 gallons all wet?" Earth Save: Healthy People Healthy Planet.</a></p>
+				<p class="factsource"><a href="https://academic.oup.com/bioscience/article/54/10/909/230205" target="blank">Pimentel, David, et al. "Water Resources: Agricultural and Environmental Issues". BioScience (2004) 54 (10): 909-918.</a></p>
+				<p class="factsource"><a href="http://www2.worldwater.org/data20082009/Table19.pdf" target="blank">"Water Content of Things: Data Table 19". The World's Water 2008-2009</a></p>
+				<p class="factsource"><a href="https://www.animalsciencepublications.org/publications/jas/pdfs/71/4/818" target="blank">Beckett, J. L, Oltjen, J. W "Estimation of the Water Requirement for Beef Production in the United States". Journal of Animal Science. 1993. 71:818-826</a></p>
+				<p class="factsource"><a href="https://www.ewg.org/meateatersguide/interactive-graphic/water/" target="blank">"Water". Environmental Working Group.</a></p>
+				<p class="factsource"><a href="http://waterfootprint.org/en/water-footprint/product-water-footprint/water-footprint-crop-and-animal-products/" target="blank">"Water footprint of crop and animal products: a comparison". Water Footprint Network.</a></p>
+				<p class="factsource">Oppenlander, Richard A. Food Choice and Sustainability: Why Buying Local, Eating Less Meat, and Taking Baby Steps Won’t Work. Minneapolis, MN: Langdon Street, 2013. Print</p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat10.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">477 gallons of water are required to produce 1lb of eggs; almost 900 gallons of water are needed for 1lb of cheese.</p>
+				<p class="factsource"><a href="https://www.ewg.org/meateatersguide/interactive-graphic/water/" target="blank">"Water". Environmental Working Group.</a></p>
+				<p class="factsource"><a href="http://www.watereducation.org/post/food-facts-how-much-water-does-it-take-produce" target="blank">"Food Facts: How Much Water Does it Take to Produce...?" Water Education Foundation.</a></p>
+			</div>  
+			<div class="entry">
+				<p class="fact">1,000 gallons of water are required to produce 1 gallon of milk.</p>
+				<p class="factsource"><a href="http://waterfootprint.org/media/downloads/Hoekstra-2008-WaterfootprintFood.pdf" target="blank">Hoekstra, Arjen Y. "The water footprint of food". Water for Food.</a></p>
+				<p class="factsource"><a href="http://temp.waterfootprint.org/Reports/Mekonnen-Hoekstra-2012-WaterFootprintFarmAnimalProducts.pdf" target="blank">Mekonnen, Mesfin M. &amp; Hoekstra, Arjen Y. "A Global Assessment of the Water Footprint of Farm Animal Products". Ecosystems (2012) 15: 401-415</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/needle.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">5% of water consumed in the US is by private homes. 55% of water consumed in the US is for animal agriculture.</p>
+				<p class="factsource">Jacobson, Michael F. “Six Arguments For a Greener Diet: How a More Plant-based Diet Could Save Your Health and the Environment. Chapter 4: More and Cleaner Water”. Washington, DC: Center for Science in the Public Interest, 2006.</p>
+			</div>  
+			<div class="entry">
+				<p class="fact">Animal agriculture is responsible for 20%-33% of all freshwater consumption in the world today.</p>
+				<p class="factsource"><a href="http://temp.waterfootprint.org/Reports/Mekonnen-Hoekstra-2012-WaterFootprintFarmAnimalProducts.pdf" target="blank">Mekonnen, Mesfin M. &amp; Hoekstra, Arjen Y. "A Global Assessment of the Water Footprint of Farm Animal Products". Ecosystems (2012) 15: 401-415</a></p>
+				<p class="factsource"><a href="https://www.sciencedirect.com/science/article/pii/S2212371713000024" target="blank">Gerbens-Leenes, P.W. et al. "The water footprint of poultry, pork and beef: A comparitive study in different countries and production systems". Water Resources and Industry. Vol. 1-2, March-June 2013, Pages 25-36</a></p>
+				<p class="factsource"><a href="http://www.pnas.org/content/110/52/20888.full" target="blank">Herrero, Mario, et al. "Biomass use, production, feed efficiencies, and greenhouse gas emissions from global livestock systems". Proceedings of the National Academy of Sciences. vol. 110 no. 52</a></p>
+				<p class="factsource"><a href="https://www.forksoverknives.com/freshwater-abuse-and-loss-where-is-it-all-going/#gs.IQu=PHk" target="blank">Oppenlander DDS, Richard. "Freshwater Abuse and Loss. Where Is It All Going?" Forks over Knives. May 20,2013</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat12.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">1 quarter pound hamburger requires over 660 gallons of water to produce. That much water is equivalent to showering for two entire months.</p>
+				<p class="factsource"><a href=""></a></p>
+			</div>  
+			<div class="entry">
+				<p class="fact">Animal agriculture is responsible for up to 91% of Amazon destruction.</p> 
+				<p class="factsource"><a href="http://documents.worldbank.org/curated/en/758171468768828889/pdf/277150PAPER0wbwp0no1022.pdf" target="blank">Margulis, Sergio. "Causes of Deforestation of the Brazilian Amazon". World Bank Working Paper No. 22. 2003</a></p>
+				<p class="factsource"><a href="https://www.nytimes.com/2017/02/24/business/energy-environment/deforestation-brazil-bolivia-south-america.html?_r=0" target="blank">Tabuchi, Hiroko, Rigny, Claire &amp; White, Jeremy. "Amazon Deforestation, Once Tames, Comes Roaring Back". New York Times. February 2017</a></p>
+				<p class="factsource"><a href="http://www.mightyearth.org/mysterymeat/" target="blank">Bellantonio, Marisa, et al. "The Ultimate Mystery Meat: Exposing the Secrets Behind Burger King and Global Meat Production". Mighty Earth</a></p>
+				<p class="factsource">Oppenlander, Richard A. Food Choice and Sustainability: Why Buying Local, Eating Less Meat, and Taking Baby Steps Won’t Work. . Minneapolis, MN : Langdon Street, 2013. Print.</p>
+			</div>      
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat13.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="17result2note28" class="entry">  
+				<p class="fact">1-2 acres of rainforest are being cleared every second.</p>
+				<p class="factsource"><a href="https://www.scientificamerican.com/article/earth-talks-daily-destruction/" target="blank">"Measuring the Daily Destruction of the World's Rainforests". Scientific American</a></p>
+				<p class="factsource"><a href="https://rainforests.mongabay.com/facts/rainforest-facts.html#8" target="blank">Butler, Rhett. "10 Rainforest Facts for 2017". Mongabay.com. January, 2017</a></p>
+				<p class="factsource"><a href="http://www.rainforestrelief.org/What_to_Avoid_and_Alternatives/Rainforest_Wood.html" target="blank">"Avoiding Unsustainable Rainforest Wood". Rainforest Relief</a></p>
+				<p class="factsource"><a href="http://pdf.wri.org/keepingoptionsalive_bw.pdf" target="blank">Reid, Walter V. &amp; Miller, Kenton R. "Keeping Options Alive: The Scientific Basis for Conserving Biodiveristy". World Resources Institute. October 1989</a></p>
+				<p class="factsource"><a href="https://msu.edu/~urquhart/professional/NASA-Deforestation.pdf" target="blank">"Tropical Deforestation". National Aeronautics and Space Administration: Facts</a></p>
+			</div>  
+			<div class="entry">
+				<p class="fact">Livestock or livestock feed occupies ⅓ of the earth’s ice-free land, covering 45% of the earth’s total land.</p>
+				<p class="factsource"><a href="http://www.fao.org/newsroom/en/News/2006/1000448/index.html" target="blank">"Livestock a major threat to environment. Remedies urgently needed". FAO Newsroom. 29 November 2006</a></p>
+				<p class="factsource"><a href="http://science.time.com/2013/12/16/the-triple-whopper-environmental-impact-of-global-meat-production/" target="blank">Walsh, Bryan. "The Triple Whopper Environmental Impact of Global Meat Production". Time. Dec. 16, 2013</a></p>
+				<p class="factsource"><a href="https://cgspace.cgiar.org/bitstream/handle/10568/10601/IssueBrief3.pdf" target="blank">Thornton, Phillip, et al. "Livestock and climate change". Livestock xchange. International Livestock Research Institute. November 2011</a></p>
+				<p class="factsource"><a href="http://www.ipcc.ch/pdf/assessment-report/ar5/wg3/ipcc_wg3_ar5_chapter11.pdf" target="blank">Smith, Pete &amp; Bustamante, Mercedes, et al. "Agriculture, Forestry and Other Land Use (AFOLU)". Intergovernmental Panel on Climate Change. Chapter 11</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat14.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;"> 
+
+			<div class="entry">
+				<p class="fact">Up to 137 plant, animal and insect species are lost every day due to rainforest destruction.</p>
+				<p class="factsource"><a href="http://www.savetheamazon.org/rainforeststats.html" target="blank">"The Disappearing Rainforests". Save the Amazon.org</a></p>
+				<p class="factsource"><a href="https://kids.mongabay.com/lesson_plans/lisa_algee/deforestation.html" target="blank">"What is Deforestation?" Kids.Mongabay.com</a></p>
+				<p class="factsource"><a href="https://www.cbd.int/doc/speech/2007/sp-2007-05-22-es-en.pdf" target="blank">Message from Mr. Ahmed Djoghlaf. Secretariat of the Convention of Biological Diversity. United Nations Economic Programme</a></p>
+				<p class="factsource"><a href="https://www.theguardian.com/environment/2010/aug/16/nature-economic-security" target="blank">Vidal, John. "Protect nature for world economic security, warns UN biodiversity chief". The Guardian. August 2010</a></p>
+			</div>  
+			<div class="entry">
+				<p class="fact">Raising animals for food is the leading cause of rainforest destruction, species extinction, ocean dead zones and freshwater consumption.</p>
+				<p class="factsource"><a href="https://law.stanford.edu/stanford-environmental-law-journal-selj/" target="blank">Hyner, Christopher "A Leading Cause of Everything: One Industry That is Destroying Our Planet and Our Ability to Thrive on It". Stanford Environmental Law Journal</a></p>
+				<p class="factsource">Margulis, Sergio "Causes of Deforestation of the Brazilian Amazon". World Bank Working Paper No. 22</p>
+				<p class="factsource"><a href="http://www.cof.orst.edu/leopold/papers/Machovina_2015.pdf" target="blank">Machovina, Brian, et al "Biodiversity conservation: The key is reducing meat consumption". Science of the Total Environment 536 (2015) 419-431</a></p>
+				<p class="factsource"><a href="https://www.scientificamerican.com/article/ocean-dead-zones/" target="blank">"What Causes Ocean “Dead Zones”?". Scientific American</a></p>
+				<p class="factsource"><a href="https://www.sciencedirect.com/science/article/pii/S2212371713000024" target="blank">Gerbens-Leenes, P.W., et al "The water footprint of poultry, pork andbeef: A comparitive study in different countries and production systems". Water Resources &amp; Industry Volumes 1-2, March-June 2013, 25-36</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:70px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(1480deg);" data-top-top="left:-740px;transform:rotate(1720deg);" src="VectorImages/feather5.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Livestock operations on land have created more that 500 nitrogen flooded dead zones around the world in our oceans.</p>
+				<p class="factsource"><a href="http://www.noaanews.noaa.gov/stories2014/20140804_deadzone.html" target="blank">"NOAA-, EPA-supported scientists find average but large Gulf dead zone". National Oceanic and Atmospheric Administration. August 4, 2014</a></p>
+				<p class="factsource"><a href="https://www.smithsonianmag.com/science-nature/ocean-dead-zones-are-getting-worse-globally-due-climate-change-180953282/" target="blank">Zielinski, Sarah. "Ocean Dead Zones Are Getting Worse Globally Due to Climate Change". Smithsonian.com. November 10, 2014</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:10px; transform:rotate(0deg);" data-center-center="left:30px;transform:rotate(480deg);" data-top-top="left:-720px;transform:rotate(720deg);" src="VectorImages/feather2.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">It requires 2-5 acres of land to grow one cow.</p>
+				<p class="factsource"><a href="https://www.motherjones.com/files/eib73.pdf" target="blank">McBride, William D., Mathews Jr., Kenneth. "The Diverse Structure and Organization of U.S. Beef Cow-Calf Farms". USDA: Economic Research Service. Number 73. March 2011</a></p>
+				<p class="factsource">Oppenlander, Richard A. Food Choice and Sustainability: Why Buying Local, Eating Less Meat, and Taking Baby Steps Won’t Work.</p>
+			</div>  
+			<div class="entry">
+				<p class="fact">⅓ of the planet is desertified, with livestock as the leading driver.</p>
+				<p class="factsource"><a href="http://www.un.org/apps/news/story.asp?NewsID=17076#.WPIC62dFfIV" target="blank">"UN launches International Year of Deserts and Desertification". UN News Centre. 1 January 2006</a></p>
+				<p class="factsource">Oppenlander, Richard A. Less Meat, and Taking Baby Steps Won’t Work. Minneapolis, MN : Langdon Street, 2013. Print.</p>
+				<p class="factsource"><a href="https://editors.eol.org/eoearth/wiki/Overgrazing" target="blank">Hogan, C Michael. "Overgrazing". The Encyclopedia of Earth. May 1, 2010</a></p>
+				<p class="factsource"><a href="http://www.un.org/press/en/2012/gaef3352.doc.htm" target="blank">Desertification, Drought Affect One Third of Planet, World's Poorest People, Second Committee Told as It Continues Debate on Sustainable Development". United Nations Sixty-seventh General Assembly: Second Committee. 8 November 2012</a></p>
+				<p class="factsource"><a href="https://freefromharm.org/agriculture-environment/saving-the-world-with-livestock-the-allan-savory-approach-examined/" target="blank">Oppenlander, Richard. "Saving the World With Livestock? The Allan Savory Approach Examined". Free from Harm. August 6, 2013</a></p>
+			</div>  
+		</div>
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-180deg);" data-top-top="left:-700px;transform:rotate(-360deg);" src="VectorImages/meat3.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+		<div id="humanrights"> 
+			<div id="8result2note22" class="entry">
+				<p class="fact">We are currently growing enough food to feed 10 billion people.</p>
+				<p class="factsource"><a href="https://www.commondreams.org/views/2012/05/08/we-already-grow-enough-food-10-billion-people-and-still-cant-end-hunger" target="blank">Holt-Giménez, Eric. "We Already Grow Enough Food for 10 Billion People...and Still Can't End Hunger”. Common Dreams: Breaking News &amp; Views for the Progressive Community. May 2012</a></p>
+				<p class="factsource"><a href="http://news.cornell.edu/stories/1997/08/us-could-feed-800-million-people-grain-livestock-eat" target="blank">"U.S. could feed 800 million people with grain that livestock eat, Cornell ecologist advises animal scientists". Cornell Chronicle. August, 1997</a></p>
+				<p class="factsource"><a href="http://iopscience.iop.org/article/10.1088/1748-9326/8/3/034015/pdf" target="blank">Cassidy, Emily S, et al. "Redefining agricultural yields: form tonnes to people nourished per acre". Environmental Research Letters 8 (2013) 034015 (8pp). August 2013</a></p>
+			</div>  
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-45deg);" data-top-top="left:0px;transform:rotate(-90deg);" src="VectorImages/meat1.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="17result1note27" class="entry">
+				<p class="fact">Worldwide, at least 50% of grain is fed to livestock.</p>
+				<p class="factsource"><a href="http://www.fao.org/docrep/007/y5019e/y5019e03.html" target="blank">"Executive Summary: Feed Supply". Food and Agriculture Organization of the United Nations.</a></p>
+				<p class="factsource"><a href="https://www.globalagriculture.org/report-topics/meat-and-animal-feed.html" target="blank">"Meat and Animal Feed". Global Agriculture. Agriculture at a Crossroads. Findings and recommendations for future farming.</a></p>
+				<p class="factsource"><a href="http://www.globalissues.org/article/240/beef" target="blank">Shah, Anup. "Beef: Diverting resources to environmentally destructive uses". Global Issues. August 2010</a></p>
+				<p class="factsource"><a href="http://www.wisoybean.org/news/soybean_facts.php" target="blank">"Did you know? U.S. and Wisconsin soybean facts". Wisconsin Soybean Marketing Board</a></p>
+			</div>
+			
+			<div id="7result2note21" class="entry">
+				<p class="fact">82% of starving children live in countries where food is fed to animals, and the animals are eaten by western countries.</p>
+				<p class="factsource"><a href="http://comfortablyunaware.com/blog/the-world-hunger-food-choice-connection-a-summary/" target="blank">Oppenlander, Dr. Richard. "The World Hunger-Food Choice Connection: A Summary". Comfortably Unaware Blog. August 2012</a></p>
+				<p class="factsource"><a href="https://www.unicef.org/gambia/Improving_Child_Nutrition_-_the_achievable_imperative_for_global_progress.pdf" target="blank">"Improving Child Nutrition: The achievable imperative for global progress". UNICEF. April 2013</a></p>
+				<p class="factsource"><a href="https://data.worldbank.org/indicator/AG.PRD.LVSK.XD" target="blank">"Livestock production index". The World Bank</a></p>
+				<p class="factsource"><a href="http://www.fao.org/docrep/014/i2414e/i2414e.pdf" target="blank">"Global livestock production systems". Food and Agriculture Organization of the United Nations. Rome 2011</a></p>
+			</div>
+		</div>
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat2.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+		<div id="humanhealth">
+			<div class="entry">
+				<p class="fact">There is nothing in an animal-based diet that you can’t get in a healthier form somewhere else.</p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3471136/" target="_blank">Skerrett, MA, Patrick J &amp; Willet, MD, DrPH, Walter "Essentials of Healthy Eating: A Guide". Journal of midwifery &amp; women's health. 2010 Nov-Dec; 55(6): 492-501</a></p>
+			</div>	
+			<div id="1result1note2" class="entry">
+				<p class="fact">93% of dioxin exposure comes from eating animal products.</p>
+				<p class="factsource"><a href="http://www.ejnet.org/dioxin/" target="_blank">"Dioxins and Furans: The Most Toxic Chemicals Known to Science". Energy Justice Network</a></p>
+				<p class="factsource"><a href="https://www.atsdr.cdc.gov/phs/phs.asp?id=139&tid=26" target="_blank">"Toxic Substances Portal-Polychlorinated Biphenyls". CDC: Agency for Toxic Substances &amp; Disease Registry</a></p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/the-wrong-way-to-detox/" target="_blank">"The Wrong Way to Detox". NutritionFacts.org video</a></p>
+				<p class="factsource"><a href="https://www.nrdc.org/es/la-onda-verde" target="_blank">Healthy Milk, Healthy Baby: Chemical Pollution and Mother' Milk". National Resources Defense Council</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat5.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="3result1note7" class="entry">
+				<p class="fact">Within minutes of eating dead meat bacteria toxins the body gets a burst of inflammation, stiffening or paralyzing of the arteries.</p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/dead-meat-bacteria-endotoxemia/" target="_blank">Greger, M.D, Michael "Dead Meat Bacteria Endotoxin". NutritionFacts.org video. Volume 9. July 6th, 2012</a></p>
+				<p class="factsource"><a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D718D5E9F16F2F9E4075D32373C874BA/S0007114510003004a.pdf/div-class-title-the-capacity-of-foodstuffs-to-induce-innate-immune-activation-of-human-monocytes-span-class-italic-in-vitro-span-is-dependent-on-food-content-of-stimulants-of-toll-like-receptors-2-and-4-div.pdf" target="_blank">Erridge, Clett "The capacity of foodstuffs to induce innate immune activation of human monocytes in vitro is dependent on food content of stimulants of Toll- like receptors 2 and 4". British Journal of Nutrition. (2011), 105, 15-23</a></p>
+			</div>	
+			<div id="10result1note24" class="entry">
+				<p class="fact">Eating organic meat will not help you avoid contaminants in the meat.</p>
+				<p class="factsource"><a href="https://www.researchgate.net/publication/275217123_Consumption_of_organic_meat_does_not_diminish_the_carcinogenic_potential_associated_with_the_intake_of_persistent_organic_pollutants_POPs" target="_blank">Hernandez, Angel Rodriguez, et al "Consumption of organic meat does not diminish the carcinogenic potential associated with the intake of persistant organic pollutants (POPs)" Environmental Science and Pollution Research. April 2015</a></p>
+				<p class="factsource"><a href="https://www.forbes.com/forbes/welcome/?toURL=https://www.forbes.com/sites/jeffmcmahon/2011/04/27/radioactive-strontium-found-in-hilo-hawaii-milk/&refURL=&referrer=#17c45e637c36" target="_blank">McMahon, Jeff "Radioactive Strontium Found in Hil, Hawaii Milk". Forbes. April 27, 2011</a></p>
+			</div>	
+		</div>
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(90deg);" data-top-top="left:0px;transform:rotate(180deg);" src="VectorImages/meat6.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+		<div id="health_eggs">
+			<div id="10result1note23" class="entry">
+				<p class="fact">The USDA admitted that eggs cannot legally be labeled: Nutritious, Low Fat, Part of a Balanced Diet, Low Calorie, Healthful, Healthy, Good for You, or Safe.</p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/who-says-eggs-arent-healthy-or-safe/" target="_blank">Greger, M.D., Michael "Who Says Eggs Aren't Healthy or Safe?". NutritionFacts.org video. Volume 17. Feb. 17th, 2014</a></p>
+				<p class="factsource"><a href="http://nutritionfacts.org/video/eggs-and-cholesterol-patently-false-and-misleading-claims/" target="_blank">Greger, M.D., Michael "Eggs &amp; Cholesterol: Patently False and Misleading Claims". Volume 13. July 3rd, 2013</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:10px; transform:rotate(0deg);" data-center-center="left:30px;transform:rotate(480deg);" data-top-top="left:-720px;transform:rotate(720deg);" src="VectorImages/feather2.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Eating 1 egg a day is just as bad as smoking five cigarettes per day for life expectancy.<p class="factsubheader">This is because the yolk of a hen’s egg is a concentrated glom of saturated fat and cholesterol. It is intended to feed a baby chicken for 21 days with no outside energy input. When you put this in your bloodstream, it coats your red blood cells, making your blood thicker and more viscous. It also changes your hormone levels and raises cholesterol levels in the blood.</p></p>
+				<p class="factsource"><a href="http://www.med.mcgill.ca/epidemiology/hanley/c609/articles/EggyolkPlaqueSmoking.pdf" target="_blank">Spence, J. David, et al "Egg yolk consumption and carotid plaque". Artheroslcerosis xxx (2012) 1-5</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3105270/pdf/kwq368.pdf" target="_blank">Baer, Heather J, et al "Risk Factors for Mortality in the Nurses' Health Study: A Competing Risks Analysis". American Journal of Epidemiology. Vol. 173, No. 3</a></p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/eggs-vs-cigarettes-in-atherosclerosis/" target="_blank">Greger, M.D, Michael "Eggs vs. Cigarettes in Artherosclerosis". NutritionFacts.org video. Volume 12. March 11th, 2013</a></p>
+			</div>	
+		</div>
+
+	<img class="meatimages" data-0-bottom-center="left:70px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(1480deg);" data-top-top="left:-740px;transform:rotate(1720deg);" src="VectorImages/feather5.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+		<div id="health_meat">
+			<div id="12result1note25" class="entry">
+				<p class="fact">A World Health Organization Report has classified bacon and sausage as carcinogenic to humans. </p>
+				<p class="factsource"><a href="https://www.npr.org/sections/thesalt/2015/10/26/451211964/bad-day-for-bacon-processed-red-meats-cause-cancer-says-who" target="_blank">Aubrey, Allison. "Bad day for bacon: Processed Meats Cause Cancer WHO Says". npr: the salt. Oct. 2015</a></p>
+				<p class="factsource"><a href="http://www.thelancet.com/pdfs/journals/lanonc/PIIS1470-2045(15)00444-1.pdf" target="_blank">"Carcinogenicity of consumption of red and processed meat". The Lancet Oncology. Vol. 16. 2015</a></p>
+				<p class="factsource"><a href="https://www.iarc.fr/en/media-centre/pr/2015/pdfs/pr240_E.pdf" target="_blank">"IARC Monographs evaluate consumption of red meat and processed meat". World Health Organization International Agency for Research on Cancer. PRESS RELEASE N.240. Oct. 2015</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">If you chose to eat meat, your chances of getting diabetes are about 1 in 3</p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2676999/" target="_blank">Qi, Lu, et al "Genetic predisposition, Western dietary pattern, and the risk of type 2 diabetes in men". The American Journal of Clinical Nutrition. 2009 May; 89(5): 1453-1458</a></p>
+			</div>
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat7.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="18result2note31" class="entry">
+				<p class="fact">If you chose to eat meat, your chances of getting cancer: for women 1 in 3, for men 1 in 2</p>
+				<p class="factsource"><a href="http://www.pcrm.org/health/cancer-resources/diet-cancer/facts/meat-consumption-and-cancer-risk" target="_blank">"Meat Consumption and Cancer Risk". Physicians Committee for Responsible Medicine</a></p>
+			</div>
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-100px;transform:rotate(480deg);" data-top-top="left:-700px;transform:rotate(720deg);" src="VectorImages/feather1.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">If you chose to eat meat, your chances of gaining weight are about 2 in 3 </p>
+				<p class="factsource"><a href="https://www.ewg.org/meateatersguide/a-meat-eaters-guide-to-climate-change-health-what-you-eat-matters/meat-and-your-health/" target="_blank">"Meat Eater's Guide Report: Meat and your Health". Environmental Working Group</a></p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/thousands-of-vegans-studied/" target="_blank">Greger, M.D, Michael "Thousands of Vegans Studied". NutritionFacts.org video. Volume 3. October 29th, 2009</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">Testing shows 88% of pork chops, 90% of ground beef, and 95% of chicken breasts sampled were contaminated with fecal bacteria.</p>
+				<p class="factsource"><a href="https://www.fda.gov/downloads/AnimalVeterinary/SafetyHealth/AntimicrobialResistance/NationalAntimicrobialResistanceMonitoringSystem/UCM293581.pdf" target="_blank">"2010 Retail Meat Report". FDA: National Antimicrobial Resistance Monitoring System (NARMS)</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-180deg);" data-top-top="left:-700px;transform:rotate(-360deg);" src="VectorImages/meat3.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="5result2note13" class="entry">
+				<p class="fact">One serving of processed meat per day has been found to increase your risk of developing diabetes by 51%.</p>
+				<p class="factsource"><a href="https://www.researchgate.net/profile/An_Pan2/publication/51562202_Red_meat_consumption_and_risk_of_type_2_diabetes_3_Cohorts_of_US_adults_and_an_ppdated_meta-analysis/links/02bfe5122dc0f60b4e000000.pdf" target="_blank">Pan, An, et al "Red meat Consumption and risk of type 2 diabetes: 3 cohorts of US adults and an updated meta-analysis". American Journal of Clinical Nutrition. August 2011</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3483430/" target="_blank">Micha, Renata, et al "Unprocessed Red and Processed Meats and Risk of Coronary Artery Disease and Type 2 Diabetes- An Updated Review of the Evidence". Current artherosclerosis reports. 2012 Dec;14(6): 515-524</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">The average American consumes 209 pounds of meat per year.</p>
+				<p class="factsource"><a href="http://livablefutureblog.com/2011/03/how-much-meat-do-we-eat-anyway" target="_blank">DeBruicker, Julie. "How much do we eat, anyway?" John Hopkins Center for a Liveable Future. March 2011</a></p>
+				<p class="factsource"><a href="https://www.economist.com/blogs/graphicdetail/2012/04/daily-chart-17" target="_blank">"Kings of the Carnivores. Vegetarians should look away". The Economist. April 2012</a></p>
+				<p class="factsource"><a href="https://www.huffingtonpost.com/neal-barnard-md/american-diet-do-we-eat-too-much_b_805980.html" target="_blank">Barnard, M.D, Neal. "Do We Eat Too Much Meat?" The Huffington Post Blog. January 2011</a></p>
+				<p class="factsource"><a href="http://www.businessinsider.com/where-do-people-eat-the-most-meat-2015-9" target="_blank">Gould, Skye &amp;  Friedman, Lauren F. "The countries where people eat the most meat". Business Insider. September 2015</a></p>
+			</div>	
+		</div>
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat9.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+		<div id="health_fish">
+			<div class="entry">
+				<p class="fact">Toxins bioaccumulate in fish flesh.</p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/cannibalistic-feed-biomagnification/" target="_blank">Greger, M.D, Michael "Cannibalistic Feed Biomagnification". NutritionFacts.org video. Volume 3. December 8th, 2009</a></p>
+				<p class="factsource"><a href="https://academic.oup.com/ajcn/article/80/1/237/4690285" target="_blank">Doréa, José G "Vegetarian diets and exposure to organochlorine pollutants, lead and mercury". The American Journal of Clinical Nutrition. 2004</a></p>
+				<p class="factsource"><a href="https://www.scientificamerican.com/article/how-fertilizers-harm-earth/" target="_blank">"How Fertilizers Harm Earth More Than Help Your Lawn". Scientific American</a></p>
+				<p class="factsource"><a href="http://cdn.intechopen.com/pdfs-wm/35141.pdf" target="_blank">Romero, Jaime, et al "Antibiotics in Aquaculture-Use, Abuse and Alternatives". Health and Environment in Aquaculture</a></p>
+			</div>	
+		</div>
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-180deg);" data-top-top="left:-700px;transform:rotate(-360deg);" src="VectorImages/meat8.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+		<div id="health_chicken">
+			<div class="entry">
+				<p class="fact">The leading source of sodium in the American diet for adults is chicken.</p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3725480/#!po=39.4737" target="_blank">Drewnowski, Adam &amp; Rehm, Colin D "Sodium Intakes of US Children and Adults from Foods and Beverages by Location of Origin and by Specific Food Source". Nutrients. 2013; 5(6): 1840-1855</a></p>
+				<p class="factsource"><a href="http://consumersunion.org/2011/10/what-are-they-pumping-into-your-chicken/" target="_blank">"What are they pumping into your chicken?" Consumers Union</a></p>
+			</div>	
+			<div -d="18result2note32" class="entry">
+				<p class="fact">The number one dietary source of cholesterol in America is chicken.</p>
+				<p class="factsource"><a href="http://www.pcrm.org/health/health-topics/cholesterol-and-heart-disease" target="_blank">"Cholesterol and Heart Disease". Physician's Committee for Responsible Medicine</a></p>
+			</div>	
+		</div>
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat4.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+		<div id="health_dairy">
+			<div id="4result1note9" class="entry">
+				<p class="fact">The number one source of saturated fat is dairy.</p>
+				<p class="factsource"><a href="https://www.hsph.harvard.edu/nutritionsource/top-food-sources-of-saturated-fat-in-the-us/" target="_blank">"Top Food Sources of Saturated Fat in the U.S." Harvard T.H. Chan School of Public Health</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">There is a strong link between dairy foods and autoimmune diseases.</p>
+				<p class="factsource"><a href="https://doctorklaper.com/answers/answers07" target="_blank">"Q &amp; A: Diet, Arthritis and Autoimmune Diseases". Michael Klaper, M.D. Nutrition-Based Medicine.</a></p>
+				<p class="factsource"><a href="http://www.pcrm.org/health/health-topics/foods-and-arthritis" target="_blank">"Foods and Arthritis". Physicians Committee for Responsible Medicine</a></p>
+				<p class="factsource"><a href="http://europepmc.org/articles/PMC3582227" target="_blank">Maslova, Ekaterina, et al "Low-fat yoghurt intake in pregnancy associated with increased child asthma and allergic rhinitis risk: a prospective cohort study". Journal of Nutritional Science. 2012. July 6</a></p>
+				<p class="factsource"><a href="http://www.msard-journal.com/article/S2211-0348(16)30100-6/pdf" target="_blank">Yadav, Vijayshree, et al "Low-fat, plant-based diet in multiple sclerosis: A randomized controlled trial". Multiple Sclerosis and Related Disorders 9 (2016) 80-90</a></p>
+				<p class="factsource"><a href="https://www.drmcdougall.com/misc/2009nl/jan/ms.htm" target="_blank">"The Multiple Sclerosis and Diet Saga". McDougall Newsletter.</a></p>
+				<p class="factsource"><a href="http://www.aulamedica.es/nh/pdf/9247.pdf" target="_blank">Villagran-Garcia, Edna F, et al "Introduction of pasteurized/raw cow's milk during the second semester of life as a risk factor of type 1 diabetes mellitus in school children and adolescents". Nutricion Hospitalaria. 2015; 32(2): 634-637</a></p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/treating-multiple-sclerosis-with-the-swank-ms-diet/" target="_blank">Greger, M.D, Michael "Treating Multiple Sclerosis with the Swank MS Diet". NutritionFacts.org video. Volume 15. September 25th, 2013</a></p>
+			</div>
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat10.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Children are suffering from conditions linked to dairy consumption.</p>
+				<p class="factsource"><a href="http://drjaygordon.com/health-concerns/dairy-2.html" target="_blank">"Milk: Does it Really Do a Body Good?". Jay Gordon, MD FAAP Feb. 23, 2010</a></p>
+				<p class="factsource"><a href="https://www.researchgate.net/publication/8041151_Acne_and_milk_the_diet_myth_and_beyond" target="_blank">Danby, F. William "Acne and milk, the diet myth, and beyond". Journal of the American Academy of Dermatology 52(2):360-2 March 2005</a></p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/national-dairy-council-on-acne-and-milk/" target="_blank">Greger, M.D, Michael "National Dairy Council on Acne and Milk". NutritionFacts.org video. Volume 8. May 10th, 2012</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3533146/" target="_blank">Dehghani, MD, Seyed-Mohsen, et al "The Role of Cow's Milk Allergy in Pediatric Chronic Constipation: A Randomized Clinical Trial". Iranian Journal of Pediatrics. 2012 Dec; 22(4): 468-474</a></p>
+				<p class="factsource"><a href="http://journals.sagepub.com/doi/pdf/10.1177/1941406409335481" target="_blank">Bondi, JD, MD, Steven A &amp; Lieuw, MD, PHD, Kenneth "Excessive Cow's Milk Consumption and Iron Deficiency in Toddlers". Infant, Child &amp; Adolescent Nutrition vol.1: no.3</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3166669/?report=reader" target="_blank">Farahmand, Fatemeh "Cow's Milk Allergy among Children with Gastroesophagael Reflux Disease". Gut and Liver. 2011 Sep; 5(3): 298-301</a></p>
+				<p class="factsource"><a href="https://www.foodallergy.org/common-allergens/milk" target="_blank">"Milk Allergy". Food Allergy Research &amp; Education</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/needle.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="3result2note8" class="entry">
+				<p class="fact">Milk is a hormonal fluid.</p>
+				<p class="factsource"><a href="http://www.breastcancer.org/research-news/20130327" target="_blank">"Study Suggests Full-Fat Dairy Products May Be Linked to Worse Survival" BreastCancer.org</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4524299/" target="_blank">Malekinejad, Haasan &amp; Rezabakhsh, Aysa "Hormones in Dairy Foods and Their Impact on Public Health – A Narrative Review Article". Iranian Journal of Public Health. 2015 Jun; 44(6): 742-758</a></p>
+			</div>	
+			<div id="5result2note14" class="entry">
+				<p class="fact">Dairy has been linked to many different types of cancer.</p>
+				<p class="factsource"><a href="https://academic.oup.com/jnci/article/105/9/616/986948" target="_blank">Kroenke, Candyce H, et al "High-and Low-Fat Dairy Intake, Recurrence, and Mortality After Breast Cancer Diagnosis". Journal of the National Cancer Institute. Volume 105, Issue 9, 1 may 2013</a></p>
+				<p class="factsource"><a href="http://www.readcube.com/articles/10.1002/ijc.29466?r3_referer=wol&tracking_action=preview_click&show_checkout=1&purchase_referrer=onlinelibrary.wiley.com&purchase_site_license=LICENSE_DENIED_NO_CUSTOMER" target="_blank">Hausen, Harold zur &amp; Villiers, Ethel-Michele de "Daily cattle serum and milk factors contributing to the risk of colon and breast cancers". International Journal of Cancer: 137, 959-967 (2015)</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3357167/#__ffn_sectitle" target="_blank">Karger "Consumption of Cow's Milk and Possible Risk of Breast Cancer". Breast Care (Basel). 2010 Mar; 5(1): 44-46</a></p>
+				<p class="factsource"><a href="http://www.cancer.ca/en/cancer-information/cancer-type/prostate/risks/?region=on" target="_blank">"Risk factors for prostate cancer". Canadian Cancer Society</a></p>
+				<p class="factsource"><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.573.4684&rep=rep1&type=pdf" target="_blank">Gao, Xiang, et al "Prospective Studies of Dairy Product and Calcium Intakes and Prostate Cancer Risk: A Meta-Analysis". Journal of the National Cancer Institute, Vol. 97, No. 23, Dec. 7, 2005</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat12.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Dairy products have pus.</p>
+				<p class="factsource"><a href="https://www.aphis.usda.gov/animal_health/nahms/dairy/downloads/dairy_monitoring/BTSCC_2013infosheet.pdf" target="_blank">"Determining U.S. Milk Quality Using Bulk Tank Somatic Cell Counts, 2013". USDA APHIS Centers for Epidemiology and Animal Health Sep. 2014</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">Milk does not grow strong bones.</p>
+				<p class="factsource"><a href="http://www.bmj.com/content/349/bmj.g6015" target="_blank">Michaelsson, Karl, et al "Milk intake and risk of mortality and fractures in women and men: cohort studies". British Medical Journal 2014, 349</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1602030/" target="_blank">Lanou, Amy Joy "Bone health in children". British Medical Journal. 2006 Oct 14; 333(7252): 763-764</a></p>
+				<p class="factsource"><a href="https://academic.oup.com/ajcn/article/77/2/504/4689714" target="_blank">Feskanich, Diane, et al "Calcium, vitamin D, milk consumption, and hip fractures: a prospective study among postmenopausal women". The American Journal of Clinical Nutrition. Feb 2003 vol. 77 no.2 504-511</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat13.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="5result2note15" class="entry">
+				<p class="fact">In fact, countries with the highest rates of dairy consumption have the highest rates of osteoporosis.</p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3004072/" target="_blank">Dhanwal, Dinesh K, et al "Epidemiology of hip fracture: Worldwide geographic variation". Indian Journal of Orthopaedics. 2011 Jan-Mar; 45(1): 15-22</a></p>
+				<p class="factsource"><a href="http://www.dairyinfo.gc.ca/index_e.php?s1=dff-fcil&s2=cons&s3=consglo" target="_blank">"Global Consumption of Dairy Products". Canadian Dairy Information Center.</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat14.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;"> 
+
+			<div class="entry">
+				<p class="fact">Any animal protein boosts the level of cancer promoting growth hormone IGF-1 and dairy products increase the risk of cancers related to your hormones.</p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/protein-intake-and-igf-1-production/" target="_blank">Greger, M.D, Michael "Protein Intake &amp; IGF-1 Production".</a></p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/protein-intake-and-igf-1-production/" target="_blank">NutritionFacts.org video. Vol. 10, Oct. 2012</a></p>
+				<p class="factsource"><a href="http://www.pcrm.org/sites/default/files/pdfs/health/milk_and_prostate_cancer.pdf" target="_blank">Barnard, M.D., Neal D. "Milk Consumption and Prostate Cancer". Physicians Committee for Responsible Medicine</a></p>
+				<p class="factsource"><a href="http://ajcn.nutrition.org/content/74/4/549.abstract?ijkey=c05bb3e5203da970cc2ed230d512c9732640cfd8&keytype2=tf_ipsecsha" target="_blank">Chan, June M., et al "Dairy products, calcium and prostate cancer risk in the Physicians' Health Study". The American Journal of Clinical Nutrition. Oct. 2001 vol. 74 no. 4 549-554</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">Dairy can increase a man’s risk of getting prostate cancer by 34%.</p>
+				<p class="factsource"><a href="http://www.pcrm.org/health/health-topics/milk-and-prostate-cancer-the-evidence-mounts" target="_blank">"Milk and Prostate Cancer: The Evidence Mounts". Physicians Committee for Responsible Medicine</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:70px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(1480deg);" data-top-top="left:-740px;transform:rotate(1720deg);" src="VectorImages/feather5.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">For women who have had breast cancer, just one serving of whole dairy a day can increase their chance of dying from the disease 49%, and dying from any disease 64%.</p>
+				<p class="factsource"><a href="https://academic.oup.com/jnci/article/105/9/616/986948" target="_blank">Kroenke, Candayce H., et al "High-and Low-Fat Dairy Intake, Recurrence, and Mortality After Breast Cancer Diagnosis". Journal of the National Cancer Institute. Volume 105, Issue 9. May 2013</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">Casein protein, the main protein in dairy products, especially in cheese, creates casomorphins.</p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4487594/" target="_blank">Nguyen, Duc Doan, et al "Formation and Degradation of Beta-Casomorphins in Dairy Processing". Critical Reviews in Food Science and Nutrition. 2015 Dec 6; 55(14): 1955-1967</a></p>
+				<p class="factsource"><a href="http://www.pcrm.org/health/diets/ffl/newsletter/breaking-the-cheese-addiction-step-3-cleansing-the" target="_blank">"Breaking the Cheese Addiction: Step 3 Cleansing the Palate". Physicians Committee for Responsible Medicine</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:10px; transform:rotate(0deg);" data-center-center="left:30px;transform:rotate(480deg);" data-top-top="left:-720px;transform:rotate(720deg);" src="VectorImages/feather2.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Not only do casomorphins have a similar, drug-like, effect as opioids, but they may play a role in sudden infant death syndrome (SIDS) and autism.</p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/cows-milk-casomorphin-and-autism/" target="_blank">Greger, M.D., Michael "Cow's Milk Casomorphin &amp; Autism". NutritionFacts.org video. Volume 8, May 9th, 2012</a></p>
+				<p class="factsource"><a href="https://www.researchgate.net/publication/26646213_-Casomorphins-7_in_infants_on_different_type_of_feeding_and_different_levels_of_psychomotor_development" target="_blank">Kost, Natalya V, et al "B-Casomorphins-7 in infants on different type of feeding and different levels of psychomotor development". Peptides 30(10): 1854-1860 August 2009</a></p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/cows-milk-casomorphin-and-crib-death/" target="_blank">Greger, M.D., Michael "Cow's Milk Consumption &amp; Crib Death". NutritionFacts.org video. Volume 8. May 8th, 2012</a></p>
+				<p class="factsource"><a href="http://onlinelibrary.wiley.com/doi/10.2903/j.efsa.2009.231r/epdf" target="_blank">Noni, Ivano De, et al "Review of the potential health impact of B-casomorphins and related peptides". European Food Safety Authority Scientific Report (2009) 231, 1-107</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-180deg);" data-top-top="left:-700px;transform:rotate(-360deg);" src="VectorImages/meat3.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Studies referencing the link between exposure to dairy at a young age and Type 1 Diabetes</p>
+				<p class="factsource"><a href="http://www.aulamedica.es/nh/pdf/9247.pdf" target="_blank">Villagran-Garcia, Edna F, et al "Introduction of pasteurized/raw cow's milk during the second semester of life as a risk factor of type 1 diabetes mellitus in school children and adolescents". Nutricion Hospitalaria. 2015; 32(2): 634-637</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1173447/" target="_blank">Gottlieb, Scott "Early exposure to cows' milk raises risk of diabetes in high risk children". British Medical Journal. 2000 Oct 28; 321(7268): 1040</a></p>
+				<p class="factsource"><a href="http://ajcn.nutrition.org/content/71/6/1525.abstract" target="_blank">Muntoni, Sandro, et al "Nutritional factors and worldwide incidence of childhood type 1 diabetes". The American Journal of Clinical Nutrition. June 2000 vol. 71 no. 6. 1525-1529</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">Cow milk protein causes antibodies in the bloodstream that attack the pancreas.</p>
+				<p class="factsource"><a href="http://www.nealhendrickson.com/mcdougall/020700puthepancreas.html" target="_blank">"The Pancreas-Under Attack by Cow-Milk". The McDougall Newsletter. July 2002. Vol. 1 No. 7</a></p>
+			</div>	
+		</div>
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-45deg);" data-top-top="left:0px;transform:rotate(-90deg);" src="VectorImages/meat1.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+		<div id="health_protein">
+			<div class="entry">
+				<p class="fact">Do we have to eat meat to get enough protein?</p>
+				<p class="factsource"><a href="http://circ.ahajournals.org/content/105/25/e197.full" target="blank">McDougall, John "Plant Foods Have a Complete Amino Acid Composition". Circulation. June 25, 2002</a></p>
+				<p class="factsource"><a href="http://www.vrg.org/nutrition/protein.php" target="blank">Mangels, PhD, RD, Reed "Protein in the Vegan Diet". The Vegetarian Resource Group</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3662288/" target="blank">Tuso, MD, Phillip J, et al "Nutritional Updates for Physicians: Plant-Based Diets". The Permanente Journal. 2013 Spring; 17(2): 61-66</a></p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/do-vegetarians-get-enough-protein/" target="blank">Greger, M.D., Michael "Do Vegetarians Get Enough Protein?" NutritionFacts.org video. Volume 19. June 6th, 2014</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4081456/" target="blank">Rizzo, Nico S, et al "Nutrient Profiles of Vegetarian and Non-Vegetarian Dietary Patterns". Journal of the Academy of Nutrition and Dietics. 2013 Dec; 113(12): 1610-1619</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">All protein is initially made by plants.</p>
+				<p class="factsource"><a href="http://plantcellbiology.masters.grkraj.org/html/Plant_Cell_Biochemistry_And_Metabolism4-Nitrogen_Metabolism.htm" target="blank">"Nitrogen Metabolism". Plant Cell Biology</a></p>
+				<p class="factsource"><a href="https://courses.lumenlearning.com/boundless-microbiology/chapter/nutrient-cycles/" target="blank">"The Nitrogen Cycle". Boundless.com: Microbiology</a></p>
+				<p class="factsource"><a href="https://www.cs.mcgill.ca/~rwest/link-suggestion/wpcd_2008-09_augmented/wp/n/Nitrogen_cycle.html" target="blank">"Nitrogen Cycle". Wikipedia for Schools 2008/2009</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat2.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Plants are loaded with protein.</p>
+				<p class="factsource"><a href="http://www.pcrm.org/health/diets/vegdiets/how-can-i-get-enough-protein-the-protein-myth" target="blank">"The Protein Myth". Physicians Committee for Responsible Medicine</a></p>
+				<p class="factsource"><a href="http://www.health.com/health/gallery/0,,20718479,00.html" target="blank">MacMillan, Amanda "14 Best Vegan and Vegetarian Protein Sources". Health.com</a></p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/plant-protein-preferable/" target="blank">Greger, M.D., Michael "Plant Protein Preferable". NutritionFacts.org video. Volume 6, November 1st, 2011</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">Most Americans get about twice the protein they need, while getting less than half of the fiber they need. </p>
+				<p class="factsource"><a href="https://www.bloomberg.com/news/articles/2016-11-04/enough-with-the-protein-america" target="blank">Shanker, Deena "Enough With the Protein, America". Bloomberg. November 4, 2016</a></p>
+				<p class="factsource"><a href="https://www.huffingtonpost.com/jessica-jones-ms-rd/protein-diet_b_1882372.html" target="blank">Jones, MS, RD, Jessica "The Protein Myth: Why You Need Less Protein Than You Think". Huffington Post Blog. Nov. 20th, 2012</a></p>
+				<p class="factsource"><a href="https://www.webmd.com/diet/guide/fiber-how-much-do-you-need#1" target="blank">Zelman, MPH, RD, LD, Kathleen "Fiber: How Much Do You Need?". WebMD</a></p>
+				<p class="factsource"><a href="https://nutritionfacts.org/2015/09/29/where-do-you-get-your-fiber/" target="blank">Greger, M.D., Michael "Where Do You Get Your Fiber?". NutritionFacts.org. September 29th, 2015</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat5.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="5result2note17" class="entry">
+				<p class="fact">Plant-Based Athlete Case Studies</p>
+				<div id="casestudies">
+					<p class="factsubheader"><a href="https://www.gq.com/story/vegan-diet-of-nfl-player-david-carter" target="blank">David Carter: former NFL defensive lineman</a></p>
+					<p class="factsubheader"><a href="http://www.greatveganathletes.com/tim-shieff-vegan-freerunner" target="blank">Timothy Shieff: world champion freerunner, ninja warrior</a></p>
+					<p class="factsubheader"><a href="https://www.facebook.com/Mu-the-ageless-drug-free-athlete-Plant-strongvegan-826194394120198/" target="blank">Mu Jin Han: ageless drug free athlete</a></p>
+					<p class="factsubheader"><a href="https://www.riseofthevegan.com/blog/vegan-tia-blanco-surfing-world-champion" target="blank">Tia Blanco: professional surfer, ISA world surf champion (x2)</a></p>
+					<p class="factsubheader"><a href="https://www.outsideonline.com/1905351/plant-based-ultraman" target="blank">Rich Roll: ultra-endurance athlete author, finding ultra &amp; plantpower way</a></p>
+				</div>
+			</div>	
+		</div>
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(90deg);" data-top-top="left:0px;transform:rotate(180deg);" src="VectorImages/meat6.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+		<div id="health_diseaseprevention">
+			<div id="5result1note11" class="entry">
+				<p class="fact">Low fat, plant-based diet is more than twice as powerful at controlling and/or reversing diabetes, than the ADA diet recommending meat and dairy.</p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2677007/pdf/ajcn8951588S.pdf" target="blank">Barnard, Neal D, et al "A low-fat vegan diet and a conventional diabetes diet in the treatment of diabetes: a randomized, controlled, 74-wk clinical trial".</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2677007/pdf/ajcn8951588S.pdf" target="blank">American Journal of Clinical Nutrition 2009;89(suppl): 1588S-96S</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2680723/" target="blank">Barnard, MD, Neal D, et al "A low-fat vegan diet elicits greater macronutrient changes, but is comparable in adherence and acceptibility, compared with a more conventional diabetes diet among individuals with type 2 diabetes". Journal of The American Dietic Association. 2009 Feb; 109(2): 263-272</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782970/" target="blank">Natale, MD, PHD, Claudia De, et al "Effects of a Plant-Based High Carbohydrate/High-Fiber Diet Versus High-Monounsaturated Fat/Low-Carbohydrate Diet on Postprandial Lipids in Type 2 Diabetic Patients".  Diabetes Care. 2009 Dec; 32(12): 2168-2173</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3483430/" target="blank">Micha, Renata, et al "Unprocessed Red and Processed Meats and Risk of Coronary Artery Disease and Type 2 Diabetes-An Updated Review of the Evidence ". Current Artherosclerosis Reports. 2012 Dec; 14(6): 515-524</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3942738/" target="blank">Barnard, Neal, et al "Meat Consumption as a Risk Factor for Type 2 Diabetes". Nutrients. 2014 Feb; 6(2): 897-910</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3921224/" target="blank">Chiu, Tina H.T., et al "Taiwanese Vegetarians and Omnivores: Dietary Composition, Prevalence of Diabetes and IFG". PLoS ONE. 2014; 9(2): e88547</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2671114/" target="blank">Tonstad, MD, PHD, Serena, et al "Type of Vegetarian Diet, Body Weight, and Prevalence of Type 2 Diabetes". Diabetes Care. 2009 May; 32(5): 791-796</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat7.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="7result2note19" class="entry">
+				<p class="fact">Vitamin intake and overall nutrition go up on a plant-based diet from a meat-based diet.</p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3662288/" target="blank">Tuso, MD, Phillip J, et al "Nutritional Update for Physicians: Plant-Based Diets". The Permanente Journal. 2013 Spring; 17(2): 61-66</a></p>
+			</div>	
+			<div id="5result2note12" class="entry">
+				<p class="fact">You can stop and reverse heart disease with plant-based diets</p>
+				<p class="factsource"><a href="https://jamanetwork.com/journals/jama/fullarticle/188274" target="blank">Ornish, MD, Dean, et al "Intensive Lifestyle Changes for Reversal of Coronary Heart Disease". Journal of the American Medical Association. December 16th, 1998. Vol 280. No. 23</a></p>
+				<p class="factsource"><a href="https://www.health.harvard.edu/heart-health/halt-heart-disease-with-a-plant-based-oil-free-diet-" target="blank">"Halt heart disease with a plant-based, oil-free diet". Harvard Health Publications</a></p>
+				<p class="factsource"><a href="http://jainhospitals.com/pdf/can-lifestyle-changes-reverse-coronary-heart-disease.pdf" target="blank">Ornish, Dean, et al "Can lifestyle changes reverse coronary heart disease?</a></p>
+				<p class="factsource"><a href="http://jainhospitals.com/pdf/can-lifestyle-changes-reverse-coronary-heart-disease.pdf" target="blank">The Lifestyle Heart Trial". The Lancet. July 1990. Vol. 336 No. 8708 Pages 129-133</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-180deg);" data-top-top="left:-700px;transform:rotate(-360deg);" src="VectorImages/meat3.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="18result1note30" class="entry">
+				<p class="fact">When people adopt a fully plant-based diet their cholesterol levels plummet within a few days.</p>
+				<p class="factsource"><a href="http://www.nutritionmd.org/nutrition_tips/nutrition_tips_understand_foods/cholesterol_lowering.html" target="blank">"Making Sense of Foods: Understanding Cholesterol: Guidelines for Lowering Blood Cholesterol". NutritionMD</a></p>
+				<p class="factsource"><a href="http://jaha.ahajournals.org/content/4/10/e002408" target="blank">Wang, Fenglei, et al "Effect of Vegetarian Diets on Blood Lipids: A Systematic Review and Meta-Analysis of Randomized Controlled Trials". Journal of the American Heart Association. October 27th, 2015</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">When people adopt a fully plant-based diet blood pressure comes down.</p>
+				<p class="factsource"><a href="http://nutritionstudies.org/high-blood-pressure/" target="blank">Goldhammer, D.C., Alan "High Blood Pressure". T. Colin Campbell Center for Nutrition Studies. October 15, 1997</a></p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4684131/" target="blank">Gustafson, Craig "Alan Goldhammer, DC: Water Fasting-The Clinical Effectiveness of Rebooting Your Body". Integrative Medecine: A Clinician's Journal. 2014 Jun; 13(3): 52-57</a></p>
+			</div>	
+			<div id="5result2note16" class="entry">
+				<p class="fact">For individuals who adopted a fully plant-based diet, 99.4% were able to avoid major cardiac events.</p>
+				<p class="factsource"><a href="http://dresselstyn.com/JFP_06307_Article1.pdf" target="blank">Esselstyn Jr, MD, Caldwell B, et al "A way to reverse CAD?". The Journal of Family Practice. July 2014. Vol 63, No 7</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat9.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">In 174 consecutive patients with high blood pressure, all lowered their blood pressure enough to eliminate the need for medication by following a plant based diet.</p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4684131/" target="blank">Gustafson, Craig "A Clinician's Journal: Alan Goldhammer, DC: Water Fasting-The Clinical Effectiveness of Rebooting Your Body". Integrative Medecine: A Clinician's Journal. 2014 Jun; 13(3): 52-57</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-180deg);" data-top-top="left:-700px;transform:rotate(-360deg);" src="VectorImages/meat8.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Crohn’s Disease and Multiple Sclerosis remission rates were the best ever achieved from patients following a plant-based diet.</p>
+				<p class="factsource"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4315368/" target="blank">Greger, M.D. FACLM, Michael "Plant-Based Diets for Multiple Sclerosis". NutritionFacts.org. May 21st, 2013</a></p>
+				<p class="factsource"><a href="https://nutritionfacts.org/2013/05/21/plant-based-diets-for-multiple-sclerosis/" target="blank">Chiba, MD, Mitsuro, et al "Plant-Based Diets in Crohn's Disease". The Permanente Journal. 2014 Fall; 18(4): 94</a></p>
+			</div>	
+			
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat4.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">15x more protein can be grown on any given area of land with plants, rather than with cows.</p>
+				<p class="factsubheader">Soybeans can be produced at 52. 5 bushels per acre x 60 lbs. per bushel = 3,150 dry soybeans per acre<br>Soybeans protein content (dry) is 163.44 grams per pound<br>The protein content per acre of soybeans is 163.44 g x 3,150 lb. = 514,836 g per acre<br><br>Beef can be produced at 205 pounds per acre<br>Beef protein content (raw) is 95.34 grams per pound<br>The protein content per acre of beef is 95.34 g x 205 lb. = 19,544.7 g per acre</p>
+			</div>	
+			<div class="entry">
+				<p class="fact">Liquid pig manure is pumped into waste pits that leach into rivers and streams and then are sprayed unfiltered onto nearby fields.</p>
+				<p class="factsource"><a href="https://news.nationalgeographic.com/news/2014/10/141028-hog-farms-waste-pollution-methane-north-carolina-environment/" target="blank">Bienkowski, Brian "Pig Poop Fouls North Carolina Streams". Scientific American. February 18, 2015</a></p>
+				<p class="factsource"><a href="https://www.scientificamerican.com/article/pig-poop-fouls-north-carolina-streams/" target="blank">Peach, Sara "What to Do About Pig Poop? North Carolina Fights a Rising Tide". National Geographic. October 30, 2014</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat10.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">Every minute, 7 million pounds of excrement are produced by animals raised for food in the US.*</p>
+				<p class="factsource">This doesn’t include the animals raised outside of USDA jurisdiction or in backyards, or the billions of fish raised in aquaculture settings in the US.</p>
+				<p class="factsource"><a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/null/?cid=nrcs143_014211" target="blank">"Agricultural Waste Characteristics". Agricultural Waste Management Field Handbook. USDA. Chapter 4</a></p>
+				<p class="factsource"><a href="https://directives.sc.egov.usda.gov/viewerFS.aspx?hid=21430" target="blank">"Agricultural Waste Management Field Handbook". USDA: Natural Resources Conservation Service. Part 651</a></p>
+				<p class="factsource"><a href="https://directives.sc.egov.usda.gov/OpenNonWebContent.aspx?content=31475.wba" target="blank">"Animal Manure Management". USDA: Natural Resources Conservation Service. RCA Issue Bief #7. December 1995</a></p>
+			</div>	
+		</div>
+		<div id="vegansolution">
+			<div id="7result2note18" class="entry">
+				<p class="fact">The healthiest, cheapest, safest source of vitamin B12 is a fortified food or supplement.</p>
+				<p class="factsource"><a href="https://nutritionfacts.org/video/cheapest-source-of-vitamin-b12/" target="blank">Greger, M.D, Michael "Cheapest Source of Vitamin B12". NutritionFacts.org video. Volume 7. February 7th, 2012.</a></p>
+				<p class="factsource"><a href="https://www.drmcdougall.com/misc/2007nl/nov/b12.html" target="blank">McDougall, John "Vitamin B12 Deficiency-the Meat-eaters' Last Stand". McDougall Newsletter. November 2007, Vol. 6, No. 11</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/needle.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">What about people who say they need to eat meat for their blood type or their genes? (Hint: They likely don’t.)</p>
+				<p class="factsource"><a href="https://academic.oup.com/ajcn/redirect-unavailable?url=ajcn.nutrition.org/content/early/2013/05/22/ajcn.113.058693.full.pdf+html" target="blank">Cusack, Leila, et al "Blood type diets lack supporting evidence: a systematic review". The American Journal of Clinical Nutrition. 2013</a></p>
+			</div>	
+			<div id="18result2note33" class="entry">
+				<p class="fact">There is a common belief that eating plant-based is expensive.</p>
+				<p class="factsource"><a href="http://plantbasedonabudget.com/plant-based-on-a-budget-challenge-family-of-4-week-1/" target="blank">Paschal, Terrence "Plant Based on a Budget Challenge-Family of 4-Week 1". Plant Based on a Budget</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:30px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(180deg);" data-top-top="left:-700px;transform:rotate(360deg);" src="VectorImages/meat12.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div id="2result2note5" class="entry">
+				<p class="fact">Land required to feed 1 person for 1 year:<br>Vegan: 1/6th acre<br>Vegetarian: 3x as much as a vegan<br>Meat Eater: 18x as much as a vegan.</p>
+				<p class="factsource">Robbins, John. Diet for a New America, StillPoint Publishing, 1987, p. 352</p>
+				<p class="factsource"><a href="http://www.earthsave.org/pdf/ofof2006.pdf" target="blank">"Our Food Our Future. Making a Difference With Every Bite: The Power of the Fork!" EarthSave International</a></p>
+				<p class="factsource"><a href="http://www.pnas.org/content/111/33/11996.full" target="blank">Eishel, Gordon, et al. "Land, irrigation water, greenhouse gas, reactive nitrogen burdens of meat, eggs and dairy production in the United States". Proceedings of the National Academy of Sciences. Vol. 111 No. 33 June 2014</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">1.5 acres can produce 37,000 pounds of plant-based food.</p>
+				<p class="factsource">Oppenlander, Richard A. Less Meat, and Taking Baby Steps Won’t Work. Minneapolis, MN : Langdon Street, 2013. Print.</p>
+				<p class="factsource"><a href="http://demandware.edgesuite.net/bbbw_prd/on/demandware.static/-/Library-Sites-JSSSharedLibrary/default/dw2a706e5e/assets/information/vegetables-direct-seeded-crop-seed-quantity-yield-chart.pdf" target="blank">"Direct Seeded Vegetable Crop Chart". Johnny's Selected Seeds</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat13.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+
+			<div class="entry">
+				<p class="fact">1.5 acres can produce 375 pounds of beef.</p>
+				<p class="factsource"><a href="https://lib.dr.iastate.edu/cgi/viewcontent.cgi?referer=&httpsredir=1&article=1722&context=ans_air" target="blank">Schwab, Denise, et al. "Grass-fed and Organic Beef: Production Costs and Breakeven Market Prices, 2008-2009". Iowa State University 2012</a></p>
+			</div>	
+			<div class="entry">
+				<p class="fact">A person who follows a vegan diet produces the equivalent of 50% less carbon dioxide, uses 1/11th oil, 1/13th water, and 1/18th land compared to a meat-lover for their food.</p>
+				<p class="factsource"><a href="http://shrinkthatfootprint.com/food-carbon-footprint-diet" target="blank">"The carbon foodprint of five diets compared". Shrink That Footprint</a></p>
+				<p class="factsource"><a href="https://link.springer.com/article/10.1007/s10584-014-1169-1/fulltext.html" target="blank">Scarborough, Peter, et al. "Dietary greenhouse-gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK". Climactic Change. July 2014. Volume 125. Issue 2. pp. 179-192</a></p>
+				<p class="factsource"><a href="https://academic.oup.com/ajcn/article/78/3/660S/4690010" target="blank">Pimentel, David &amp; Pimental, Marcia. "Sustainability of meat-based and plant-based diets and the environment". The American Journal of Clinical Nutrition. September 2003. vol 78. no 3 660S-663S</a></p>
+				<p class="factsource"><a href="http://www.onegreenplanet.org/animalsandnature/facts-on-animal-farming-and-the-environment/" target="blank">"Facts on Animal Farming and the Environment". One Green Planet.</a></p>
+				<p class="factsource"><a href="https://michaelbluejay.com/veg/environment.html" target="blank">"Vegetarianism and the Environment. Why going meatless is important". Vegetarian Guide</a></p>
+				<p class="factsource"><a href="http://www.earthsave.org/pdf/ofof2006.pdf" target="blank">"Our Future Our Food. Making a Difference With Every Bite: The Power of the Fork!". Earth Save International</a></p>
+				<p class="factsource"><a href="http://www.wri.org/blog/2016/04/sustainable-diets-what-you-need-know-12-charts" target="blank">Ranganathan, Janet &amp; Waite, Richard. "Sustainable Diets: What You Need to Know in 12 Charts". World Resources Institute. April 2016</a></p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:-500px;transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(-90deg);" data-top-top="left:0px;transform:rotate(-180deg);" src="VectorImages/meat14.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;"> 
+
+			<div class="entry">
+				<p class="fact">Each day, a person who eats a vegan diet saves 1,100 gallons of water, 45 pounds of grain, 30 sq ft of forested land, 20 lbs CO2 equivalent, and one animal’s life.</p>
+				<p class="factsource"><a href="http://www.wri.org/blog/2016/04/sustainable-diets-what-you-need-know-12-charts" target="blank">Ranganathan, Janet &amp; Waite, Richard. "Sustainable Diets: What You Need to Know in 12 Charts". World Resources Institute. April 2016</a></p>
+				<p class="factsource"><a href="https://link.springer.com/article/10.1007/s10584-014-1169-1/fulltext.html" target="blank">Scarborough, Peter, et al. "Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK". Climactic Change July 2014., Volume 125, Issue 2, pp 179-192</a></p>
+				<p class="factsource"><a href="http://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf" target="blank">"Meat Eater's Guide to Climate Change and Health". Environmental Working Group. 2011</a></p>
+				<p class="factsource"><a href="http://www.wri.org/blog/2016/04/sustainable-diets-what-you-need-know-12-charts" target="blank">Ranganathan, Janet &amp; Waite, Richard. "Sustainable Diets: What You Need to Know in 12 Charts". World Resources Institute. April 2016</a></p>
+				<p class="factsource"><a href="http://thevegancalculator.com/#calculator" target="blank">"How much have you saved?" The Veagn Calculator</a></p>
+				<p class="factsource"><a href="https://www.vegetariantimes.com/life-garden/the-environmental-impact-of-a-meat-based-diet" target="blank">Ogden, Lillie. "The Environmental Impact of a Meat-Based Diet". Vegetarian Times.</a></p>
+				<p class="factsource">Oppenlander, Richard A. Less Meat, and Taking Baby Steps Won’t Work. Minneapolis, MN : Langdon Street, 2013. Print.</p>
+			</div>	
+
+	<img class="meatimages" data-0-bottom-center="left:70px; transform:rotate(0deg);" data-center-center="left:-270px;transform:rotate(1480deg);" data-top-top="left:-740px;transform:rotate(1720deg);" src="VectorImages/feather5.svg" style="
+	z-index: -500;
+  	display: block;
+  	position: absolute;
+  	animation-fill-mode: forwards;
+    max-width: 250px;">
+		</div>
+	</div>
+
+
+<!-- WANKER: Message to be revealed on resizing. -->
+<div class="wanker" data-wanker>
+  <div class="wanker-content">
+    <h1>The web was meant to be read, not squished.</h1>
+  </div>
+</div>
+
+<script src="js/jquery.wanker.min.js">
+      $(function() {
+        $('[data-wanker]').wanker({delay: 200, duration: 1000});
+      });
+</script>
+<!-- WANKER: Reveal the above content on browser resizing. -->
+
+</body>
+</html>

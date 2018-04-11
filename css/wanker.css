@@ -1,0 +1,36 @@
+.wanker {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: #000;
+  color: tomato;
+  display: none;
+  text-transform: uppercase;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  padding-top: 100px;
+  width: 100%;
+  z-index: 2014;
+  animation: glitch_mild 0s steps(0) ;
+  font-family: freight-sans-compressed-pro, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.wanker-content {
+  position: relative;
+  margin: 3em auto 0;
+  width: 80%;
+}
+
+.wanker-content h1 {
+  font-size: 8em;
+  line-height: .9em;
+  margin-bottom: 2em;
+}
+
+.wanker-content a {
+  color: #e9522f;
+}
