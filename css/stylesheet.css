@@ -3,7 +3,8 @@ body, html {
   color: #232323;
   width: 100%;
   height: 100%;
-  cursor: default;
+/*  cursor: url(http://bringerp.free.fr/Files/RotMG/cursor.gif), pointer;
+*/  height: 100%;
   user-select: none;
   overflow-x: hidden;
 }
