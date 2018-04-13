@@ -152,7 +152,7 @@ h1:hover {
 .factsource {
   right: -135px;
   position: relative;
-  max-width: 500px;
+/*  max-width: 500px;*/
   font-size: .3em;
   font-weight: 500px;
   text-align: right;
