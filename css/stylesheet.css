@@ -24,6 +24,14 @@ h1:hover {
   animation: glitch .4s steps(100);
 }
 
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 130px;
+    padding-bottom: 400px;
+    width: 70%;
+  }
+}
+
 h2 {
   display: inline-block;
   float: right;
@@ -56,6 +64,12 @@ h2 {
 .introtext {
   top: 19.5vh;
   line-height: 190px;
+}
+
+@media screen and (max-width: 800px) {
+  .introtext {
+    line-height: 120px;
+  }
 }
 
 #whyvegan {
