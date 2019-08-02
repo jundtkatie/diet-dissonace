@@ -46,6 +46,17 @@ h2 {
   margin: 0% 9% 0% 31%;
 }
 
+@media screen and (max-width: 800px) {
+  h2 {
+    font-size: 40px;
+    padding-right: 0%;
+    top: -25vh;
+    padding-top: 0%;
+    margin-top: 0%;
+    margin: 0% 0% 2% 35%;
+  }
+}
+
 .veganmeaning {
   top: 18vh;
   margin: auto;
@@ -59,6 +70,13 @@ h2 {
 }
 .veganmeaning:hover {
   animation: glitch 0s steps(100) !important;
+}
+
+@media screen and (max-width: 800px) {
+  .veganmeaning {
+    top: 5vh;
+    width: 60%;
+  }
 }
 
 .introtext {
@@ -75,6 +93,12 @@ h2 {
 #whyvegan {
   padding-top: 0px;
   top: 0vh;
+}
+
+@media screen and (max-width: 800px) {
+  #whyvegan {
+    top: -13vh;
+  }
 }
 
 #masscows {
