@@ -26,9 +26,9 @@ h1:hover {
 
 @media screen and (max-width: 800px) {
   h1 {
-    font-size: 130px;
-    padding-bottom: 400px;
-    width: 90%;
+    font-size: 150px;
+    padding-bottom: 450px;
+    width: 80%;
   }
 }
 
