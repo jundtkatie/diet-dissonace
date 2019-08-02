@@ -24,6 +24,22 @@ h1:hover {
   animation: glitch .4s steps(100);
 }
 
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 105px;
+    display: block;
+    position: relative;
+    font-family: freight-sans-compressed-pro, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    padding-bottom: 250px;
+    width: 70%;
+    margin: auto;
+  }
+}
+
+
 h2 {
   display: inline-block;
   float: right;
