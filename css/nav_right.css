@@ -16,6 +16,16 @@
     letter-spacing: .2em;
 }
 
+@media screen and (max-width: 800px) {
+  .topnav {
+    width: 500px;
+    font-size: 16px;
+    padding: 25px 0px;
+    left: 25%;
+    letter-spacing: .2em;
+  }
+}
+
 /* Style the links inside the navigation bar */
 .topnav a {
     float: right;
@@ -32,6 +42,12 @@
     color: #232323;
     transition: color 0.3s ease;
 
+}
+
+@media screen and (max-width: 800px) {
+  .topnav a {
+    padding: 5px 17px;
+  }
 }
 
 /* Change the color of links on hover */
